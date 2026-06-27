@@ -1,3 +1,60 @@
+----------------------------------------------------
+🌐 AI & Full Stack Developer Portfolio
+
+Short one-line description
+
+[🚀 https://rishabh-portfolio-lac.vercel.app/  [📄 Resume]  [💻 Source Code]
+
+----------------------------------------------------
+
+## 🛠️ Tech Stack
+
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql)
+
+## ✨ Features
+
+- Modern UI/UX
+- Responsive Design
+- Animated Components
+- Resume Download
+- Project Showcase
+- Contact Form
+- GitHub Integration
+
+## Folder Structure
+
+portfolio/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── assets/
+│   └── styles/
+│
+├── package.json
+└── README.md
+
+## Installation
+-## 🚀 Run Locally
+
+```bash
+git clone https://github.com/rishabhbhardwaj-dev/portfolio.git
+
+cd portfolio
+
+npm install
+
+npm run dev
+```
+## Deplyment
+-Deployed on Vercel
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
