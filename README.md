@@ -3,7 +3,7 @@
 
 Short one-line description
 
-[🚀 https://rishabh-portfolio-lac.vercel.app/  [📄 Resume]  [💻 Source Code]
+[🚀 https://rishabh-portfolio-lac.vercel.app/  [📄 "D:\Rishabh_Resume_New.pdf"]  [💻 Source Code]
 
 ----------------------------------------------------
 
