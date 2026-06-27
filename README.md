@@ -26,7 +26,7 @@ Short one-line description
 - GitHub Integration
 
 ## Folder Structure
-
+'''text
 portfolio/
 │
 ├── public/
