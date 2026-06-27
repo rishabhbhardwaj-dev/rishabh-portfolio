@@ -25,20 +25,21 @@ Short one-line description
 - Contact Form
 - GitHub Integration
 
-## Folder Structure
-'''text
+## 📂 Folder Structure
+
+```text
 portfolio/
-│
 ├── public/
 ├── src/
+│   ├── assets/
 │   ├── components/
 │   ├── pages/
-│   ├── assets/
-│   └── styles/
-│
+│   ├── styles/
+│   └── App.jsx
 ├── package.json
+├── vite.config.js
 └── README.md
-
+```
 ## Installation
 -## 🚀 Run Locally
 
