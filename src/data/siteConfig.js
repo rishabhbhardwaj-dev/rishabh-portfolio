@@ -18,7 +18,7 @@ export const siteConfig = {
 
   // ─── Social Links ──────────────────────────────────────
   social: {
-    github: "https://github.com/rishabhbhardwaj-dev",
+    github: "https://github.com/rishabhbhardwaj-dev", 
     linkedin: "https://www.linkedin.com/in/rishabhbhardwaj-tech",
   },
 
