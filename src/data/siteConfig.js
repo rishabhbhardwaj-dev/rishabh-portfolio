@@ -1,3 +1,7 @@
+import resumePdf from '../assets/resume.pdf';
+import jarvisImage from "../assets/Jarvis_image.png";
+import campusSyncImage from "../assets/campussync_image.png";
+
 /**
  * Centralized Site Configuration
  * ================================
@@ -23,7 +27,7 @@ export const siteConfig = {
   },
 
   // ─── Resume ─────────────────────────────────────────────
-  resumePath: "/resume.pdf",
+  resumePath: resumePdf,
 
   // ─── Education ──────────────────────────────────────────
   education: {
@@ -54,7 +58,7 @@ export const siteConfig = {
       github: "https://github.com/rishabhbhardwaj-dev/CampusSyncERP",
       live: "https://campus-sync-erp.vercel.app/",
       liveTooltip: "View Live Demo",
-      image: "https://raw.githubusercontent.com/rishabhbhardwaj-dev/CampusSyncERP/main/Assets/Dashboard.png",
+      image: campusSyncImage,
     },
     jarvisAI: {
       name: "JARVIS AI Assistant",
@@ -63,7 +67,7 @@ export const siteConfig = {
       // Desktop application — no web deployment
       live: null,
       liveTooltip: "Desktop application - deployment coming soon",
-      image: "https://raw.githubusercontent.com/rishabhbhardwaj-dev/Jarvis-voice-assistant/main/Jarvis_Interface%28Dashboard%29.png",
+      image: jarvisImage,
     },
   },
 

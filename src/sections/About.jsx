@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Cpu, Lightbulb, Code2, Database, GraduationCap, MapPin, Briefcase, Monitor, Calendar } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
+import profileImage from '../assets/profile.jpg';
 
 export default function About() {
   const cards = [
@@ -87,7 +88,7 @@ export default function About() {
             <div className="float-none sm:float-left w-full sm:w-48 aspect-[4/5] sm:mr-8 sm:mb-4 mb-8 rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_-15px_rgba(255,255,255,0.05)] relative group">
               <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-10 pointer-events-none"></div>
               <img 
-                src="/profile.jpg" 
+                src={profileImage} 
                 alt="Rishabh Bhardwaj" 
                 className="w-full h-full object-cover object-center filter contrast-[1.1] grayscale-[0.2] scale-[1.35] group-hover:grayscale-0 group-hover:scale-[1.4] transition-all duration-700" 
               />
