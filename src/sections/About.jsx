@@ -90,7 +90,7 @@ export default function About() {
               <img 
                 src={profileImage} 
                 alt="Rishabh Bhardwaj" 
-                className="w-full h-full object-contain object-centerw-full h-full object-contain object-center filter contrast-[1.1] grayscale-[0.2] scale-[1.35] group-hover:grayscale-0 group-hover:scale-[1.4]" 
+                className="w-full h-full object-cover object-top filter contrast-[1.1] grayscale-[0.2]" 
               />
             </div>
             <p>
