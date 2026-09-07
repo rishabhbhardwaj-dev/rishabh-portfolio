@@ -19,7 +19,7 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-
+      
       const sections = navLinks.map(link => link.href.substring(1));
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -31,7 +31,7 @@ export default function Navbar() {
       });
       if (current) setActiveSection(current);
     };
-
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -50,7 +50,7 @@ export default function Navbar() {
         <a href="#" className="text-2xl font-bold tracking-tighter text-white z-10 relative group">
           {siteConfig.firstName}<span className="text-primary transition-colors group-hover:text-accent2">.</span>
         </a>
-
+        
         <nav className="hidden md:flex items-center gap-1 bg-white/5 border border-white/10 p-1.5 rounded-full backdrop-blur-md relative">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
@@ -78,8 +78,7 @@ export default function Navbar() {
 
         <a
           href={siteConfig.resumePath}
-          target="_blank"
-          rel="noopener noreferrer"
+          download
           className="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300"
         >
           Resume
