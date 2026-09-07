@@ -99,9 +99,6 @@ export default function About() {
             <p>
               My engineering philosophy revolves around <strong className="text-white font-medium">clean architecture, exceptional user experience, and forward-thinking technologies.</strong> Whether I'm designing a massive relational database for an ERP system or crafting a micro-interaction in Framer Motion, I treat every line of code as a critical part of the user's journey.
             </p>
-            <p>
-              Currently, my primary goal is to join a forward-thinking product team where I can architect robust solutions, push the boundaries of what's possible with AI integration, and continue growing alongside brilliant engineers.
-            </p>
             <div className="clear-both"></div>
           </motion.div>
 
