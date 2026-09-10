@@ -39,7 +39,7 @@ export default function Projects() {
   const ease = [0.16, 1, 0.3, 1];
 
   return (
-    <section id="projects" className="py-32 px-6 relative z-10 w-full flex flex-col items-center">
+    <section id="projects" className="py-16 md:py-32 px-6 relative z-10 w-full flex flex-col items-center">
       <div className="container mx-auto max-w-6xl">
 
         <motion.div
@@ -47,19 +47,18 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 1, ease }}
-          className="mb-32 text-center"
+          className="mb-16 md:mb-32 text-center"
         >
-          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">Showcase</h2>
-          <h3 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6">Featured Work.</h3>
+          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-2 md:mb-3">Showcase</h2>
+          <h3 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-4 md:mb-6">Featured Work.</h3>
         </motion.div>
 
-        <div className="flex flex-col gap-32 lg:gap-40">
+        <div className="flex flex-col gap-20 md:gap-32 lg:gap-40">
           {projectsData.map((project, index) => (
             <div
               key={index}
-              className={`flex flex-col lg:flex-row gap-12 lg:gap-20 items-center ${project.reverse ? 'lg:flex-row-reverse' : ''}`}
+              className={`flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-20 items-center ${project.reverse ? 'lg:flex-row-reverse' : ''}`}
             >
-              {/* Image Container */}
               <motion.div
                 initial={{ opacity: 0, x: project.reverse ? 40 : -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -67,7 +66,6 @@ export default function Projects() {
                 transition={{ duration: 1, ease }}
                 className="w-full lg:w-[55%] relative group rounded-2xl overflow-hidden border border-white/10 bg-white/5 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_50px_-15px_rgba(255,255,255,0.15)] hover:-translate-y-2"
               >
-                {/* Subtle border glow effect inner */}
                 <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-10 pointer-events-none"></div>
                 <div className="w-full aspect-video bg-[#0a0a0a]">
                   <img
@@ -78,7 +76,6 @@ export default function Projects() {
                 </div>
               </motion.div>
 
-              {/* Content Container */}
               <motion.div
                 initial={{ opacity: 0, x: project.reverse ? -40 : 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -86,39 +83,37 @@ export default function Projects() {
                 transition={{ duration: 1, delay: 0.1, ease }}
                 className="w-full lg:w-[45%] flex flex-col"
               >
-                <h4 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">{project.title}</h4>
-                <p className="text-gray-400 text-lg leading-relaxed mb-8 font-light">
+                <h4 className="text-2xl md:text-4xl font-bold text-white mb-3 md:mb-6 tracking-tight">{project.title}</h4>
+                <p className="text-gray-400 text-base md:text-lg leading-relaxed mb-5 md:mb-8 font-light">
                   {project.overview}
                 </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4 mb-6 md:mb-10">
                   {project.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-center gap-3 text-gray-300 text-sm font-medium">
-                      <CheckCircle2 size={18} className="text-primary flex-shrink-0" />
+                    <div key={idx} className="flex items-center gap-2.5 md:gap-3 text-gray-300 text-xs md:text-sm font-medium">
+                      <CheckCircle2 size={16} className="text-primary flex-shrink-0" />
                       <span>{feature}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Upgraded Tech Chips */}
-                <div className="flex flex-wrap gap-2 mb-12">
+                <div className="flex flex-wrap gap-2 md:gap-4 mb-8 md:mb-12">
                   {project.tech.map((chip, idx) => (
                     <span
                       key={idx}
-                      className="px-4 py-1.5 text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full shadow-sm transition-colors duration-300 hover:bg-primary/20"
+                      className="px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-semibold text-primary bg-primary/10 border border-primary/20 rounded-full shadow-sm transition-colors duration-300 hover:bg-primary/20"
                     >
                       {chip}
                     </span>
                   ))}
                 </div>
 
-                {/* Buttons: Case Study → GitHub → Live Demo */}
-                <div className="flex flex-wrap gap-4 mt-auto">
+                <div className="flex flex-wrap gap-3 md:gap-4 mt-auto">
                   <Link
                     to={project.links.caseStudy}
-                    className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-semibold transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.5)] hover:bg-gray-100"
+                    className="group inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-white text-black font-semibold text-sm md:text-base transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_10px_40px_-10px_rgba(255,255,255,0.5)] hover:bg-gray-100"
                   >
-                    <FileText size={18} /> Case Study
+                    <FileText size={16} /> Case Study
                     <span className="opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300 -ml-2 group-hover:ml-0 hidden sm:inline-block">→</span>
                   </Link>
                   <a
@@ -126,25 +121,25 @@ export default function Projects() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub"
-                    className="flex items-center justify-center px-5 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium transition-all duration-500 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_10px_30px_-10px_rgba(255,255,255,0.1)]"
+                    className="flex items-center justify-center px-4 md:px-5 py-2.5 md:py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium text-sm md:text-base transition-all duration-500 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_10px_30px_-10px_rgba(255,255,255,0.1)]"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                   </a>
                   {project.links.live ? (
                     <a
                       href={project.links.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium transition-all duration-500 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_10px_30px_-10px_rgba(255,255,255,0.1)]"
+                      className="inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-white/5 border border-white/10 text-white font-medium text-sm md:text-base transition-all duration-500 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_10px_30px_-10px_rgba(255,255,255,0.1)]"
                     >
-                      <ExternalLink size={18} /> Live Demo
+                      <ExternalLink size={16} /> Live Demo
                     </a>
                   ) : (
                     <span
                       title={project.links.liveTooltip}
-                      className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 border border-white/5 text-gray-500 font-medium cursor-not-allowed select-none"
+                      className="inline-flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 rounded-full bg-white/5 border border-white/5 text-gray-500 font-medium text-sm md:text-base cursor-not-allowed select-none"
                     >
-                      <ExternalLink size={18} /> Live Demo
+                      <ExternalLink size={16} /> Live Demo
                     </span>
                   )}
                 </div>

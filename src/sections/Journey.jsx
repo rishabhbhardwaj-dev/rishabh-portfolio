@@ -51,40 +51,37 @@ export default function Journey() {
   }, []);
 
   return (
-    <section id="journey" className="py-32 px-6 relative z-10 w-full flex flex-col items-center overflow-hidden">
+    <section id="journey" className="py-16 md:py-32 px-6 relative z-10 w-full flex flex-col items-center overflow-hidden">
       <div className="container mx-auto max-w-4xl">
-        
-        <motion.div 
+
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-10 md:mb-20 text-center"
         >
-          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">Timeline</h2>
-          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">My Journey.</h3>
+          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-2 md:mb-3">Timeline</h2>
+          <h3 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4 md:mb-6">My Journey.</h3>
         </motion.div>
 
         <div className="relative border-l border-white/10 ml-6 md:ml-0 md:pl-0 md:border-none">
-          {/* Central Line for Desktop */}
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2"></div>
-          
+
           {timeline.map((item, index) => {
             const isEven = index % 2 === 0;
             return (
-              <div key={index} className="relative flex flex-col md:flex-row items-center justify-between mb-16 last:mb-0">
-                
-                {/* Timeline Icon */}
-                <motion.div 
+              <div key={index} className="relative flex flex-col md:flex-row items-center justify-between mb-10 md:mb-16 last:mb-0">
+
+                <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className={`absolute left-[-28px] md:left-1/2 md:-translate-x-1/2 w-14 h-14 rounded-full border-4 border-background ${item.color} flex items-center justify-center z-10 shadow-xl`}
+                  className={`absolute left-[-28px] md:left-1/2 md:-translate-x-1/2 w-11 h-11 md:w-14 md:h-14 rounded-full border-4 border-background ${item.color} flex items-center justify-center z-10 shadow-xl`}
                 >
                   {item.icon}
                 </motion.div>
 
-                {/* Content Left (Empty on Mobile) */}
                 <div className={`hidden md:block w-5/12 ${isEven ? 'pr-12 text-right' : 'order-1'} `}>
                   {isEven && (
                     <motion.div
@@ -100,7 +97,6 @@ export default function Journey() {
                   )}
                 </div>
 
-                {/* Content Right (Main content on Mobile) */}
                 <div className={`w-full pl-8 md:pl-0 md:w-5/12 ${isEven ? 'order-1' : 'pl-12 text-left'} `}>
                   {(!isEven || isMobile) && (
                     <motion.div
@@ -110,9 +106,9 @@ export default function Journey() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className={isEven ? "md:hidden" : ""}
                     >
-                      <span className="text-sm font-bold text-primary tracking-widest block mb-2">{item.year}</span>
-                      <h4 className="text-xl font-bold text-white mb-2">{item.title}</h4>
-                      <p className="text-gray-400 leading-relaxed">{item.description}</p>
+                      <span className="text-sm font-bold text-primary tracking-widest block mb-1.5 md:mb-2">{item.year}</span>
+                      <h4 className="text-base md:text-xl font-bold text-white mb-1.5 md:mb-2">{item.title}</h4>
+                      <p className="text-gray-400 text-sm md:text-base leading-relaxed">{item.description}</p>
                     </motion.div>
                   )}
                 </div>
