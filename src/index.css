@@ -7,6 +7,7 @@
   }
   body {
     @apply bg-background text-white antialiased font-sans;
+    overflow-x: hidden;
   }
 }
 
@@ -19,5 +20,12 @@
   }
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent1 to-accent2;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

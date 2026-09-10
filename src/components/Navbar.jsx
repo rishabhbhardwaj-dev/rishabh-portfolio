@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
@@ -15,6 +15,7 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +37,16 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Auto-scroll active item into view inside the nav strip
+  useEffect(() => {
+    if (navRef.current) {
+      const activeEl = navRef.current.querySelector('[data-active="true"]');
+      if (activeEl) {
+        activeEl.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+      }
+    }
+  }, [activeSection]);
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -46,20 +57,24 @@ export default function Navbar() {
         scrolled ? "py-2 md:py-3 bg-background/50 backdrop-blur-xl border-b border-white/5 shadow-[0_4px_30px_rgba(0,0,0,0.1)]" : "py-3 md:py-6 bg-transparent"
       ))}
     >
-      <div className="container mx-auto px-4 md:px-6 flex justify-between items-center max-w-6xl gap-2">
-        <a href="#" className="text-xl md:text-2xl font-bold tracking-tighter text-white z-10 relative group shrink-0">
+      <div className="container mx-auto px-3 md:px-6 flex justify-between items-center max-w-6xl gap-1.5 md:gap-2">
+        <a href="#" className="text-lg md:text-2xl font-bold tracking-tighter text-white z-10 relative group shrink-0">
           {siteConfig.firstName}<span className="text-primary transition-colors group-hover:text-accent2">.</span>
         </a>
 
-        <nav className="flex items-center gap-1 bg-white/5 border border-white/10 p-1 md:p-1.5 rounded-full backdrop-blur-md relative overflow-x-auto scrollbar-hide">
+        <nav
+          ref={navRef}
+          className="flex items-center gap-0.5 md:gap-1 bg-white/5 border border-white/10 p-1 md:p-1.5 rounded-full backdrop-blur-md overflow-x-auto scrollbar-hide max-w-[60%] md:max-w-none"
+        >
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
               <a
                 key={link.name}
                 href={link.href}
+                data-active={isActive}
                 className={twMerge(clsx(
-                  "relative px-3 md:px-5 py-1.5 md:py-2 text-xs md:text-sm font-medium rounded-full transition-colors duration-300 whitespace-nowrap shrink-0",
+                  "relative px-2.5 md:px-5 py-1.5 md:py-2 text-[11px] md:text-sm font-medium rounded-full transition-colors duration-300 whitespace-nowrap shrink-0",
                   isActive ? "text-white" : "text-gray-400 hover:text-white"
                 ))}
               >
@@ -80,7 +95,7 @@ export default function Navbar() {
           href={siteConfig.resumePath}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center px-3 py-1.5 md:px-6 md:py-2.5 text-xs md:text-sm font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300 shrink-0"
+          className="inline-flex items-center justify-center px-2.5 py-1.5 md:px-6 md:py-2.5 text-[11px] md:text-sm font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 hover:scale-105 transition-all duration-300 shrink-0"
         >
           Resume
         </a>
