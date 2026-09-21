@@ -1,11 +1,69 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { siteConfig } from '../data/siteConfig';
+
+const roles = ["Full Stack Developer", "AI Engineer"];
+
+function TypewriterRole() {
+  const [displayed, setDisplayed] = useState("");
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    const currentRole = roles[roleIndex];
+
+    if (isPaused) {
+      const pauseTimeout = setTimeout(() => {
+        setIsPaused(false);
+        setIsDeleting(true);
+      }, 1500);
+      return () => clearTimeout(pauseTimeout);
+    }
+
+    const speed = isDeleting ? 35 : 55;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        const next = currentRole.slice(0, displayed.length + 1);
+        setDisplayed(next);
+        if (next.length === currentRole.length) {
+          setIsPaused(true);
+        }
+      } else {
+        const next = displayed.slice(0, -1);
+        setDisplayed(next);
+        if (next.length === 0) {
+          setIsDeleting(false);
+          setRoleIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timeout);
+  }, [displayed, isDeleting, isPaused, roleIndex]);
+
+  return (
+    <span className="inline-flex items-baseline justify-center">
+      <span className="inline-block">{displayed}</span>
+      <span
+        className="inline-block w-[2px] h-[0.8em] ml-0.5 rounded-sm"
+        style={{
+          backgroundColor: '#6366f1',
+          animation: 'blink 1s step-end infinite',
+        }}
+      />
+      <span className="text-gray-600 mx-3 select-none">|</span>
+      <span className="text-gray-500 hidden sm:inline">
+        {roleIndex === 0 ? "AI Engineer" : "Full Stack Developer"}
+      </span>
+    </span>
+  );
+}
 
 export default function Hero() {
   const containerRef = useRef(null);
 
-  // Scroll Parallax
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
@@ -13,7 +71,6 @@ export default function Hero() {
 
   const glowY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
-  // Mouse Follow Glow
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -27,7 +84,6 @@ export default function Hero() {
     mouseY.set(e.clientY - rect.top);
   };
 
-  // Premium easing curve for fade-ins
   const ease = [0.16, 1, 0.3, 1];
 
   return (
@@ -37,8 +93,6 @@ export default function Hero() {
       className="relative min-h-screen w-full flex items-center justify-center pt-24 px-6 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-
-      {/* Mouse Follow Glow */}
       <motion.div
         className="pointer-events-none absolute top-0 left-0 w-[500px] h-[500px] bg-primary/15 rounded-full blur-[150px] mix-blend-screen z-20"
         style={{
@@ -49,12 +103,10 @@ export default function Hero() {
         }}
       />
 
-      {/* 1. Grid Background Layer */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
       </div>
 
-      {/* 2. Aurora/Glow Layer (Animated) */}
       <motion.div
         style={{ y: glowY }}
         className="absolute inset-0 z-0 pointer-events-none flex justify-center items-center overflow-hidden"
@@ -79,7 +131,6 @@ export default function Hero() {
         ></motion.div>
       </motion.div>
 
-      {/* 4. Typography / Foreground Layer */}
       <div className="container mx-auto max-w-5xl flex flex-col items-center text-center z-10 relative">
 
         <motion.div
@@ -113,7 +164,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.3, ease }}
           className="text-2xl md:text-3xl font-medium text-gray-300 mb-8 tracking-wide"
         >
-          Full Stack Developer <span className="text-gray-600 mx-3">|</span> AI Engineer
+          <TypewriterRole />
         </motion.h2>
 
         <motion.p
@@ -150,14 +201,13 @@ export default function Hero() {
           </a>
           <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex items-center justify-center text-gray-400 hover:text-white transition-all duration-500 px-6 py-3 bg-white/5 border border-white/5 backdrop-blur-md rounded-full hover:bg-white/10 hover:border-white/20 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(255,255,255,0.1)] font-medium">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48">
-             <rect width="48" height="48" rx="5" fill="#0A66C2"/>
-             <path fill="#FFFFFF" d="M12.5 18.5H18V36h-5.5V18.5ZM15.25 10A3.25 3.25 0 1 1 15.25 16.5A3.25 3.25 0 0 1 15.25 10ZM21.5 18.5H26.8V21H26.9C27.65 19.55 29.5 17.75 32.55 17.75C38.15 17.75 39.2 21.45 39.2 26.25V36H33.7V27.35C33.7 25.3 33.65 22.65 30.85 22.65C28 22.65 27.55 24.85 27.55 27.15V36H21.5V18.5Z"/>
-            </svg> 
+              <rect width="48" height="48" rx="5" fill="#0A66C2"/>
+              <path fill="#FFFFFF" d="M12.5 18.5H18V36h-5.5V18.5ZM15.25 10A3.25 3.25 0 1 1 15.25 16.5A3.25 3.25 0 0 1 15.25 10ZM21.5 18.5H26.8V21H26.9C27.65 19.55 29.5 17.75 32.55 17.75C38.15 17.75 39.2 21.45 39.2 26.25V36H33.7V27.35C33.7 25.3 33.65 22.65 30.85 22.65C28 22.65 27.55 24.85 27.55 27.15V36H21.5V18.5Z"/>
+            </svg>
           </a>
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

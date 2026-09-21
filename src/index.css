@@ -28,7 +28,15 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  @keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
+}
+
+
 
 @layer components {
   .marquee-track {
