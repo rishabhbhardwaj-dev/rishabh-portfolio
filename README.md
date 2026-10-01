@@ -1,74 +1,86 @@
-----------------------------------------------------
-🌐 AI & Full Stack Developer Portfolio
+# 🌐 Rishabh Bhardwaj — Developer Portfolio
 
-Short one-line description
+A modern, responsive developer portfolio showcasing my projects, technical skills, experience, and journey as a software developer.
 
-[🚀 https://rishabh-portfolio-lac.vercel.app/
+Built with **React + Vite** and deployed on **Vercel**.
 
-----------------------------------------------------
+**[🚀 Live Demo](https://rishabh-portfolio-lac.vercel.app/)**
+
+![Portfolio Preview](./src/assets/preview.png)
 
 ## 🛠️ Tech Stack
 
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-black?style=for-the-badge&logo=express)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge\&logo=react\&logoColor=black)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge\&logo=tailwindcss\&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge\&logo=framer\&logoColor=white)
 
 ## ✨ Features
 
-- Modern UI/UX
-- Responsive Design
-- Animated Components
-- Resume Download
-- Project Showcase
-- Contact Form
-- GitHub Integration
+* Responsive design for mobile, tablet, and desktop
+* Smooth scroll animations and micro-interactions
+* Project showcase with live demos and source code
+* Skills and technology overview
+* Interactive experience timeline
+* One-click resume download
+* Contact section
+* Dark modern UI
+* Fast performance with Vite
 
-## 📂 Folder Structure
+## 📂 Project Structure
 
 ```text
-portfolio/
-├── public/
+rishabh-portfolio/
+├── public/                 # Static public assets
 ├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   ├── styles/
-│   └── App.jsx
-├── package.json
-├── vite.config.js
+│   ├── assets/             # Images, resume, and icons
+│   ├── components/         # Reusable UI components
+│   ├── data/               # Projects, skills, and other data
+│   ├── pages/              # Page-level components
+│   ├── sections/           # Portfolio sections
+│   ├── App.jsx             # Root component
+│   ├── App.css             # App-level styles
+│   ├── index.css           # Global styles
+│   └── main.jsx            # Application entry point
+├── index.html              # HTML entry point
+├── package.json            # Project dependencies and scripts
+├── package-lock.json
+├── tailwind.config.js      # Tailwind CSS configuration
+├── postcss.config.js       # PostCSS configuration
+├── vite.config.js          # Vite configuration
+├── .oxlintrc.json          # Linting configuration
+├── .gitignore
 └── README.md
 ```
-## Installation
--## 🚀 Run Locally
+
+## ⚙️ Setup & Links
+
+### Run Locally
+
+**Prerequisites:** Node.js v18+ and npm
 
 ```bash
-git clone https://github.com/rishabhbhardwaj-dev/portfolio.git
+# Clone the repository
+git clone https://github.com/rishabhbhardwaj-dev/rishabh-portfolio.git
 
-cd portfolio
+# Navigate to the project
+cd rishabh-portfolio
 
+# Install dependencies
 npm install
 
+# Start the development server
 npm run dev
 ```
-## Deplyment
--Deployed on Vercel
 
+The development server will start locally, and Vite will provide the local URL in your terminal.
 
-# React + Vite
+### Connect With Me
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+* **Portfolio:** [rishabh-portfolio-lac.vercel.app](https://rishabh-portfolio-lac.vercel.app/)
+* **GitHub:** [@rishabhbhardwaj-dev](https://github.com/rishabhbhardwaj-dev)
+* **LinkedIn:** [Rishabh Bhardwaj](https://www.linkedin.com/in/rishabhbhardwaj-tech/)
 
-Currently, two official plugins are available:
+## 📄 License
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+This project is created and maintained by **Rishabh Bhardwaj**.
