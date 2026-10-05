@@ -7,14 +7,13 @@ import campusSyncImage from "../assets/campussync_image.png";
  * ================================
  * All personal information, social links, project URLs,
  * education, and profile data are managed here.
- * Import this wherever needed to avoid duplicate hardcoded values.
  */
 
 export const siteConfig = {
   // ─── Personal Info ──────────────────────────────────────
   name: "Rishabh Bhardwaj",
   firstName: "Rishabh",
-  title: "Full Stack Developer | AI Engineer",
+  title: "Full Stack Developer & AI Engineer",
   location: "Khurja, Uttar Pradesh, India",
 
   // ─── Contact ────────────────────────────────────────────
@@ -36,7 +35,7 @@ export const siteConfig = {
     institution: "Sir Chhotu Ram Institute of Engineering and Technology (SCRIET)",
     university: "CCSU, Meerut",
     cgpa: "8.6 / 10",
-    graduationDate: "May 2026",
+    graduationDate: "Graduated May 2026",
     graduationYear: "2026",
   },
 
@@ -46,8 +45,8 @@ export const siteConfig = {
   // ─── Focus Areas ────────────────────────────────────────
   focus: [
     "Full Stack Development",
-    "Backend Engineering",
-    "AI Applications",
+    "Backend & System Architecture",
+    "AI Applications & Workflows",
   ],
 
   // ─── Projects ───────────────────────────────────────────
@@ -64,7 +63,6 @@ export const siteConfig = {
       name: "JARVIS AI Assistant",
       caseStudy: "/projects/jarvis",
       github: "https://github.com/rishabhbhardwaj-dev/Jarvis-voice-assistant",
-      // Desktop application — no web deployment
       live: null,
       liveTooltip: "Desktop application - deployment coming soon",
       image: jarvisImage,
@@ -75,6 +73,6 @@ export const siteConfig = {
   seo: {
     title: "Rishabh Bhardwaj - Full Stack Developer & AI Engineer",
     description:
-      "Portfolio of Rishabh Bhardwaj — a Full Stack Developer and AI Engineer building scalable applications, ERP systems, and AI-powered software.",
+      "Portfolio of Rishabh Bhardwaj — Full Stack Developer and AI Engineer specializing in scalable web applications, campus ERP platforms, and AI integration.",
   },
 };

@@ -97,10 +97,10 @@ export default function JarvisCaseStudy() {
           {/* Hero Header */}
           <motion.div {...fadeUp} className="mb-20">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-xl mb-8">
-              <span className="text-xs font-bold tracking-widest text-accent1 uppercase">Case Study</span>
+              <span className="text-xs font-bold tracking-widest text-primary uppercase">Case Study</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 leading-[1.1]">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent1 via-accent2 to-pink-500">JARVIS</span> AI
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.15] text-white">
+              <span className="text-primary">JARVIS</span> AI
             </h1>
             <p className="text-xl md:text-2xl text-gray-400 max-w-3xl leading-relaxed font-light">
               An intelligent voice-controlled desktop assistant powered by OpenAI, capable of natural conversation, task automation, and context-aware reasoning.

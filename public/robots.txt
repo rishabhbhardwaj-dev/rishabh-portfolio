@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rishabhbhardwaj-dev.github.io/sitemap.xml
