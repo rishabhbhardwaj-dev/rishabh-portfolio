@@ -40,7 +40,7 @@ export const siteConfig = {
   },
 
   // ─── Current Status ─────────────────────────────────────
-  currentStatus: "Open to Software Development Opportunities",
+  currentStatus: "Software Development Intern — Full Stack & AI/ML at EvolveSpark Services and Solutions",
 
   // ─── Focus Areas ────────────────────────────────────────
   focus: [
