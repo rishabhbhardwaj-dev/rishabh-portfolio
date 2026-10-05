@@ -1,13 +1,14 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, GraduationCap, Code, Rocket, Search, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Briefcase, GraduationCap, Code, Rocket, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const journeyData = [
   {
-    year: "2026",
-    title: "Software Development Opportunities",
-    description: "Seeking full-time roles as a Full Stack Developer or AI Engineer building scalable applications.",
-    icon: <Search size={20} className="text-primary" />,
+    year: "July 2026 — Present",
+    navYear: "2026",
+    title: "Software Development Intern — Full Stack & AI/ML",
+    description: "EvolveSpark Services and Solutions (OPC) Pvt. Ltd.",
+    icon: <Briefcase size={20} className="text-primary" />,
   },
   {
     year: "2025",
@@ -187,7 +188,7 @@ export default function Journey() {
               <button
                 key={idx}
                 onClick={() => goTo(idx)}
-                aria-label={`Go to milestone year ${node.year}`}
+                aria-label={`Go to milestone year ${node.navYear || node.year}`}
                 className="relative z-10 flex flex-col items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-primary rounded-full p-1"
               >
                 <div
@@ -206,7 +207,7 @@ export default function Journey() {
                     (idx === current ? "text-white font-bold" : "text-gray-500")
                   }
                 >
-                  {node.year}
+                  {node.navYear || node.year}
                 </span>
               </button>
             ))}

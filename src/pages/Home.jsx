@@ -14,7 +14,7 @@ export default function Home() {
       <Background />
       <Navbar />
       
-      <main className="w-full max-w-3xl mx-auto px-6 font-sans">
+      <main className="w-full max-w-5xl mx-auto px-6 font-sans">
         <Hero />
         <About />
         <Journey />
