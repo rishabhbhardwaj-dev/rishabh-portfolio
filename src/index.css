@@ -6,20 +6,26 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-white antialiased font-sans;
+    @apply bg-background text-[#F1EFE8] antialiased font-sans;
     overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid #5B7FA6;
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-[#171714]/80 backdrop-blur-md border border-[#2A2925];
   }
   .glass-card {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl shadow-xl hover:bg-white/10 transition-colors duration-300;
+    @apply bg-[#171714] backdrop-blur-md border border-[#2A2925] rounded-2xl shadow-lg hover:border-[#5B7FA6]/40 transition-all duration-300;
   }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-accent1 to-accent2;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F1EFE8] via-[#A7A59D] to-[#77766F];
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -30,13 +36,11 @@
   }
 
   @keyframes blink {
-  50% {
-    opacity: 0;
+    50% {
+      opacity: 0;
+    }
   }
 }
-}
-
-
 
 @layer components {
   .marquee-track {
@@ -44,7 +48,8 @@
     will-change: transform;
   }
 
-  .marquee-track:hover {
+  .marquee-track:hover,
+  .marquee-track:focus-within {
     animation-play-state: paused;
   }
 
@@ -55,5 +60,17 @@
     to {
       transform: translateX(-50%);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .marquee-track {
+    animation: none !important;
   }
 }

@@ -5,54 +5,39 @@ import { Briefcase, GraduationCap, Code, Rocket, Search, ChevronLeft, ChevronRig
 const journeyData = [
   {
     year: "2026",
-    title: "Looking for Software Development Opportunities",
-    description: "Actively seeking a role as a Software Developer to build scalable products.",
-    icon: <Search size={28} className="text-white" />,
-    color: "bg-primary",
-    glow: "shadow-[0_0_25px_rgba(99,102,241,0.5)]",
-    ring: "ring-primary/30"
+    title: "Software Development Opportunities",
+    description: "Seeking full-time roles as a Full Stack Developer or AI Engineer building scalable applications.",
+    icon: <Search size={20} className="text-primary" />,
   },
   {
     year: "2025",
-    title: "Built JARVIS AI",
-    description: "Developed an intelligent assistant with context-aware responses and NLP.",
-    icon: <Rocket size={28} className="text-white" />,
-    color: "bg-accent1",
-    glow: "shadow-[0_0_25px_rgba(139,92,246,0.5)]",
-    ring: "ring-accent1/30"
+    title: "Built JARVIS AI Assistant",
+    description: "Developed an intelligent assistant with context-aware responses, NLP, and task automation workflows.",
+    icon: <Rocket size={20} className="text-primary" />,
   },
   {
     year: "2024",
     title: "Developed CampusSync ERP",
-    description: "Architected a full-stack university management system from scratch.",
-    icon: <Code size={28} className="text-white" />,
-    color: "bg-accent2",
-    glow: "shadow-[0_0_25px_rgba(45,212,191,0.5)]",
-    ring: "ring-accent2/30"
+    description: "Architected a full-stack university management system with role-based access and 8 operational modules.",
+    icon: <Code size={20} className="text-primary" />,
   },
   {
     year: "2023",
-    title: "Learned Full Stack Development",
-    description: "Mastered React, Node.js, and complex database structures.",
-    icon: <Briefcase size={28} className="text-white" />,
-    color: "bg-pink-500",
-    glow: "shadow-[0_0_25px_rgba(236,72,153,0.5)]",
-    ring: "ring-pink-500/30"
+    title: "Full Stack Engineering Foundations",
+    description: "Mastered React, Node.js, Express, relational databases, and RESTful web service architecture.",
+    icon: <Briefcase size={20} className="text-primary" />,
   },
   {
     year: "2022",
     title: "Started B.Tech in Computer Science",
-    description: "Began my formal education and wrote my first lines of code.",
-    icon: <GraduationCap size={28} className="text-white" />,
-    color: "bg-green-500",
-    glow: "shadow-[0_0_25px_rgba(34,197,94,0.5)]",
-    ring: "ring-green-500/30"
+    description: "Began formal education at SCRIET, CCSU Meerut and began building software systems.",
+    icon: <GraduationCap size={20} className="text-primary" />,
   }
 ];
 
 const slideVariants = {
   enter: (dir) => ({
-    x: dir > 0 ? 400 : -400,
+    x: dir > 0 ? 300 : -300,
     opacity: 0,
   }),
   center: {
@@ -60,7 +45,7 @@ const slideVariants = {
     opacity: 1,
   },
   exit: (dir) => ({
-    x: dir > 0 ? -400 : 400,
+    x: dir > 0 ? -300 : 300,
     opacity: 0,
   }),
 };
@@ -101,58 +86,55 @@ export default function Journey() {
 
   const handleDragEnd = (_, info) => {
     const { offset, velocity } = info;
-    if (offset.x < -80 || velocity.x < -300) {
+    if (offset.x < -60 || velocity.x < -250) {
       goNext();
-    } else if (offset.x > 80 || velocity.x > 300) {
+    } else if (offset.x > 60 || velocity.x > 250) {
       goPrev();
     }
   };
 
   return (
-    <section id="journey" className="py-20 md:py-32 px-6 relative z-10 w-full flex flex-col items-center overflow-hidden">
-      <div className="container mx-auto max-w-3xl">
+    <section id="journey" className="py-12 sm:py-16 w-full border-t border-[#2A2925] overflow-hidden scroll-mt-20">
+      <div>
 
-        {/* Header */}
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="mb-12 md:mb-16 text-center"
+          transition={{ duration: 0.5 }}
+          className="mb-8"
         >
-          <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">Timeline</h2>
-          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-white">My Journey.</h3>
+          <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B7FA6] uppercase">02 // EXPERIENCE</h2>
         </motion.div>
 
-        {/* Counter + Arrows */}
-        <div className="flex items-center justify-center gap-6 mb-12">
+        {/* Quieter Counter & Controls */}
+        <div className="flex items-center justify-center gap-4 mb-10">
           <button
             onClick={goPrev}
             disabled={current === 0}
             aria-label="Previous milestone"
-            className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="p-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-400 hover:text-white hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary"
           >
-            <ChevronLeft size={18} />
+            <ChevronLeft size={16} />
           </button>
 
-          <span className="text-xl md:text-2xl font-light text-white tabular-nums">
-            <span className="font-bold">{String(current + 1).padStart(2, '0')}</span>
-            <span className="text-gray-500 mx-2">/</span>
-            <span className="text-gray-500">{String(total).padStart(2, '0')}</span>
+          <span className="text-xs font-mono text-gray-400">
+            {String(current + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
           </span>
 
           <button
             onClick={goNext}
             disabled={current === total - 1}
             aria-label="Next milestone"
-            className="w-10 h-10 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/20 hover:bg-white/10 transition-all duration-300 disabled:opacity-20 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="p-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-400 hover:text-white hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary"
           >
-            <ChevronRight size={18} />
+            <ChevronRight size={16} />
           </button>
         </div>
 
-        {/* Milestone Content */}
-        <div className="relative w-full min-h-[320px] md:min-h-[360px] flex items-center justify-center mb-14">
+        {/* Milestone Display Box */}
+        <div className="relative w-full min-h-[260px] flex items-center justify-center mb-10 border border-white/10 bg-white/[0.02] rounded-2xl p-6 md:p-10">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={current}
@@ -161,33 +143,33 @@ export default function Journey() {
               initial="enter"
               animate="center"
               exit="exit"
-              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
               drag="x"
               dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.15}
+              dragElastic={0.1}
               onDragEnd={handleDragEnd}
               className="w-full cursor-grab active:cursor-grabbing"
               style={{ touchAction: 'pan-y' }}
             >
-              <div className="flex flex-col items-center text-center px-4">
+              <div className="flex flex-col items-center text-center px-2">
 
-                {/* Year */}
-                <span className="text-5xl md:text-7xl font-bold text-white/10 mb-6 tracking-tight select-none">
-                  {item.year}
-                </span>
-
-                {/* Icon */}
-                <div className={`w-16 h-16 md:w-20 md:h-20 rounded-full ${item.color} ${item.glow} flex items-center justify-center mb-6 ring-4 ${item.ring}`}>
+                {/* Milestone Icon */}
+                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
                   {item.icon}
                 </div>
 
+                {/* Milestone Year */}
+                <span className="text-xs font-mono text-primary uppercase tracking-widest font-semibold mb-2">
+                  {item.year}
+                </span>
+
                 {/* Title */}
-                <h4 className="text-xl md:text-2xl font-bold text-white mb-4 max-w-md">
+                <h3 className="text-xl font-bold text-white mb-3 max-w-md">
                   {item.title}
-                </h4>
+                </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed max-w-lg font-light">
+                <p className="text-gray-300 text-sm leading-relaxed max-w-lg font-normal">
                   {item.description}
                 </p>
 
@@ -196,35 +178,32 @@ export default function Journey() {
           </AnimatePresence>
         </div>
 
-        {/* Divider */}
-        <div className="w-full h-[1px] bg-white/10 mb-8" />
+        {/* Node Navigation */}
+        <div className="relative flex items-center justify-center">
+          <div className="absolute top-1/2 left-[5%] right-[5%] h-[1px] bg-white/10 -translate-y-1/2" />
 
-        {/* Progress Timeline */}
-        <div className="relative flex items-center justify-center mb-6">
-          <div className="absolute top-1/2 left-[10%] right-[10%] h-[1px] bg-white/10 -translate-y-1/2" />
-
-          <div className="relative flex items-center justify-between w-[80%] max-w-sm">
+          <div className="relative flex items-center justify-between w-full max-w-md px-4">
             {journeyData.map((node, idx) => (
               <button
                 key={idx}
                 onClick={() => goTo(idx)}
-                aria-label={`Go to ${node.year}`}
-                className="relative z-10 flex flex-col items-center gap-2 focus:outline-none group"
+                aria-label={`Go to milestone year ${node.year}`}
+                className="relative z-10 flex flex-col items-center gap-1.5 focus-visible:ring-2 focus-visible:ring-primary rounded-full p-1"
               >
                 <div
                   className={
-                    "w-4 h-4 md:w-5 md:h-5 rounded-full border-2 transition-all duration-500 " +
+                    "w-3 h-3 rounded-full border transition-all duration-300 " +
                     (idx === current
-                      ? `${node.color} border-transparent ${node.glow} scale-125`
+                      ? "bg-primary border-primary scale-110"
                       : idx < current
-                      ? "bg-white/30 border-white/20"
-                      : "bg-white/5 border-white/10")
+                      ? "bg-white/40 border-white/20"
+                      : "bg-background border-white/20")
                   }
                 />
                 <span
                   className={
-                    "text-[10px] md:text-xs font-bold tracking-wider transition-colors duration-500 " +
-                    (idx === current ? "text-white" : "text-gray-600 group-hover:text-gray-400")
+                    "text-[10px] font-mono transition-colors duration-200 " +
+                    (idx === current ? "text-white font-bold" : "text-gray-500")
                   }
                 >
                   {node.year}
@@ -233,11 +212,6 @@ export default function Journey() {
             ))}
           </div>
         </div>
-
-        {/* Hint */}
-        <p className="text-center text-gray-600 text-xs mt-6 select-none">
-          Swipe, drag, or use the arrows to explore my journey
-        </p>
 
       </div>
     </section>
