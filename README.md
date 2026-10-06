@@ -1,63 +1,78 @@
-# 🌐 Rishabh Bhardwaj — Developer Portfolio
+# Rishabh Bhardwaj — Developer Portfolio
 
-A modern, responsive developer portfolio showcasing my projects, technical skills, experience, and journey as a software developer.
+A modern, responsive developer portfolio showcasing my projects, technical skills, professional experience, education, and development journey.
 
 Built with **React + Vite** and deployed on **Vercel**.
 
-**[🚀 Live Demo](https://rishabh-portfolio-lac.vercel.app/)**
+**Live Portfolio:**  
+https://rishabh-portfolio-lac.vercel.app/
 
 ![Portfolio Preview](./src/assets/preview.png)
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge\&logo=react\&logoColor=black)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge\&logo=tailwindcss\&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge\&logo=framer\&logoColor=white)
+![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=flat-square&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-Build_Tool-646CFF?style=flat-square&logo=vite&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6%2B-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Styling-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-Animation-0055FF?style=flat-square&logo=framer&logoColor=white)
+![Git](https://img.shields.io/badge/Git-Version_Control-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat-square&logo=github&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-Deployment-000000?style=flat-square&logo=vercel&logoColor=white)
 
-## ✨ Features
+## Features
 
-* Responsive design for mobile, tablet, and desktop
-* Smooth scroll animations and micro-interactions
-* Project showcase with live demos and source code
-* Skills and technology overview
-* Interactive experience timeline
-* One-click resume download
-* Contact section
-* Dark modern UI
-* Fast performance with Vite
+- Responsive layout for mobile, tablet, and desktop
+- Project showcase with live demos and source code
+- Technical skills overview
+- Education and professional experience
+- Journey section highlighting development milestones
+- Dedicated project case studies
+- Resume access
+- Contact section
+- Subtle motion and interaction details
+- Dark editorial interface
+- Fast development and production builds with Vite
+- Privacy Policy and Terms & Conditions pages
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 rishabh-portfolio/
-├── public/                 # Static public assets
+├── public/
+│   ├── favicon.png
+│   ├── icons.svg
+│   ├── noise.svg
+│   ├── robots.txt
+│   └── sitemap.xml
 ├── src/
-│   ├── assets/             # Images, resume, and icons
-│   ├── components/         # Reusable UI components
-│   ├── data/               # Projects, skills, and other data
-│   ├── pages/              # Page-level components
-│   ├── sections/           # Portfolio sections
-│   ├── App.jsx             # Root component
-│   ├── App.css             # App-level styles
-│   ├── index.css           # Global styles
-│   └── main.jsx            # Application entry point
-├── index.html              # HTML entry point
-├── package.json            # Project dependencies and scripts
+│   ├── assets/              # Images, resume, and project assets
+│   ├── components/          # Reusable UI components
+│   ├── data/                # Portfolio content and configuration
+│   ├── pages/               # Page-level components
+│   ├── sections/            # Portfolio sections
+│   ├── App.jsx              # Root component
+│   ├── index.css            # Global styles
+│   └── main.jsx             # Application entry point
+├── index.html               # HTML entry point
+├── package.json              # Project dependencies and scripts
 ├── package-lock.json
-├── tailwind.config.js      # Tailwind CSS configuration
-├── postcss.config.js       # PostCSS configuration
-├── vite.config.js          # Vite configuration
-├── .oxlintrc.json          # Linting configuration
+├── tailwind.config.js        # Tailwind CSS configuration
+├── postcss.config.js         # PostCSS configuration
+├── vite.config.js            # Vite configuration
+├── .oxlintrc.json            # Linting configuration
 ├── .gitignore
 └── README.md
 ```
 
-## ⚙️ Setup & Links
+## Run Locally
 
-### Run Locally
+### Prerequisites
 
-**Prerequisites:** Node.js v18+ and npm
+- Node.js 18+
+- npm
+
+### Installation
 
 ```bash
 # Clone the repository
@@ -73,14 +88,20 @@ npm install
 npm run dev
 ```
 
-The development server will start locally, and Vite will provide the local URL in your terminal.
+Vite will provide the local development URL in the terminal.
 
-### Connect With Me
+### Production Build
 
-* **Portfolio:** [rishabh-portfolio-lac.vercel.app](https://rishabh-portfolio-lac.vercel.app/)
-* **GitHub:** [@rishabhbhardwaj-dev](https://github.com/rishabhbhardwaj-dev)
-* **LinkedIn:** [Rishabh Bhardwaj](https://www.linkedin.com/in/rishabhbhardwaj-tech/)
+```bash
+npm run build
+```
 
-## 📄 License
+## Links
+
+- **Portfolio:** https://rishabh-portfolio-lac.vercel.app/
+- **GitHub:** https://github.com/rishabhbhardwaj-dev
+- **LinkedIn:** https://www.linkedin.com/in/rishabhbhardwaj-tech/
+
+## License
 
 This project is created and maintained by **Rishabh Bhardwaj**.
