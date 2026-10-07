@@ -65,7 +65,24 @@ export default function About() {
     <section id="about" className="py-12 sm:py-16 w-full border-t border-[#2A2925] scroll-mt-20">
       <div>
         
-        {/* Header Label */}
+        {/* MOBILE ONLY: Portrait image placed ABOVE 01 // ABOUT heading */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="block sm:hidden mb-6"
+        >
+          <div className="w-full max-w-[240px] aspect-[3/4] mx-auto rounded-xl overflow-hidden border border-white/10 bg-white/5 relative">
+            <img 
+              src={profileImage} 
+              alt="Rishabh Bhardwaj" 
+              className="w-full h-full object-cover object-top grayscale filter contrast-105" 
+            />
+          </div>
+        </motion.div>
+
+        {/* Section Header Label: 01 // ABOUT */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,9 +93,10 @@ export default function About() {
           <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B7FA6] uppercase">01 // ABOUT</h2>
         </motion.div>
 
+        {/* Two-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
-          {/* Left Column: Storytelling & Profile Image */}
+          {/* Left Column: Storytelling & Desktop Profile Image */}
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -86,7 +104,8 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="text-base text-gray-300 leading-relaxed space-y-6"
           >
-            <div className="float-none sm:float-left w-full sm:w-44 aspect-[4/5] sm:mr-6 sm:mb-4 mb-6 rounded-xl overflow-hidden border border-white/10 bg-white/5 relative">
+            {/* DESKTOP/TABLET ONLY: Profile Image floated inside text */}
+            <div className="hidden sm:block sm:float-left w-full sm:w-48 md:w-52 aspect-[4/5] sm:mr-6 sm:mb-4 mb-6 rounded-xl overflow-hidden border border-white/10 bg-white/5 relative">
               <img 
                 src={profileImage} 
                 alt="Rishabh Bhardwaj" 
