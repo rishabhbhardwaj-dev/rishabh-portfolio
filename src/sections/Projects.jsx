@@ -6,16 +6,16 @@ import { siteConfig } from '../data/siteConfig';
 
 const projectsData = [
   {
-    title: siteConfig.projects.campusSync.name,
-    overview: "A comprehensive enterprise resource planning system designed for modern university operations. It unifies academic records, faculty allocation, student management, and role-based administrative dashboards.",
-    features: ["Real-time Attendance Tracking", "Automated Grade Calculations", "Role-based Dashboards", "Document Management"],
-    tech: ["React", "Node.js", "MySQL", "Prisma", "Tailwind CSS"],
-    image: siteConfig.projects.campusSync.image,
+    title: siteConfig.projects.evoErp.name,
+    overview: "Full-stack, multi-tenant school ERP for K-12 academic and administrative workflows, covering authentication, RBAC, student and teacher management, attendance, examinations, report cards, finance configuration, notices, and institutional reporting.",
+    features: ["Multi-Tenant Isolation", "CBSE Grading & Report Cards", "Role-Based Access (4 Roles)", "Finance & Fee Allocation"],
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind CSS"],
+    image: siteConfig.projects.evoErp.image,
     links: {
-      caseStudy: siteConfig.projects.campusSync.caseStudy,
-      github: siteConfig.projects.campusSync.github,
-      live: siteConfig.projects.campusSync.live,
-      liveTooltip: siteConfig.projects.campusSync.liveTooltip,
+      caseStudy: siteConfig.projects.evoErp.caseStudy,
+      github: siteConfig.projects.evoErp.github,
+      live: siteConfig.projects.evoErp.live,
+      liveTooltip: siteConfig.projects.evoErp.liveTooltip,
     }
   },
   {
@@ -29,6 +29,19 @@ const projectsData = [
       github: siteConfig.projects.jarvisAI.github,
       live: siteConfig.projects.jarvisAI.live,
       liveTooltip: siteConfig.projects.jarvisAI.liveTooltip,
+    }
+  },
+  {
+    title: siteConfig.projects.campusSync.name,
+    overview: "A comprehensive enterprise resource planning system designed for modern university operations. It unifies academic records, faculty allocation, student management, and role-based administrative dashboards.",
+    features: ["Real-time Attendance Tracking", "Automated Grade Calculations", "Role-based Dashboards", "Document Management"],
+    tech: ["React", "Node.js", "MySQL", "Prisma", "Tailwind CSS"],
+    image: siteConfig.projects.campusSync.image,
+    links: {
+      caseStudy: siteConfig.projects.campusSync.caseStudy,
+      github: siteConfig.projects.campusSync.github,
+      live: siteConfig.projects.campusSync.live,
+      liveTooltip: siteConfig.projects.campusSync.liveTooltip,
     }
   }
 ];
@@ -172,12 +185,21 @@ export default function Projects() {
 
                   {/* Action Links */}
                   <div className="flex flex-wrap items-center gap-3">
-                    <Link
-                      to={project.links.caseStudy}
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black font-medium text-xs transition-colors hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-primary"
-                    >
-                      <FileText size={14} /> Case Study
-                    </Link>
+                    {project.links.caseStudy ? (
+                      <Link
+                        to={project.links.caseStudy}
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black font-medium text-xs transition-colors hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-primary"
+                      >
+                        <FileText size={14} /> Case Study
+                      </Link>
+                    ) : (
+                      <span
+                        title="Case Study coming soon"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/5 text-gray-500 font-medium text-xs cursor-not-allowed select-none"
+                      >
+                        <FileText size={14} /> Case Study
+                      </span>
+                    )}
                     <a
                       href={project.links.github}
                       target="_blank"

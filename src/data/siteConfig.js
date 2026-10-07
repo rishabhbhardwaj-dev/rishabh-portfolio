@@ -1,6 +1,7 @@
 import resumePdf from '../assets/resume.pdf';
 import jarvisImage from "../assets/Jarvis_image.png";
 import campusSyncImage from "../assets/campussync_image.png";
+import evoErpImage from "../assets/evoerp_image.png";
 
 /**
  * Centralized Site Configuration
@@ -51,13 +52,13 @@ export const siteConfig = {
 
   // ─── Projects ───────────────────────────────────────────
   projects: {
-    campusSync: {
-      name: "CampusSync ERP",
-      caseStudy: "/projects/campussync",
-      github: "https://github.com/rishabhbhardwaj-dev/CampusSyncERP",
-      live: "https://campus-sync-erp.vercel.app/",
-      liveTooltip: "View Live Demo",
-      image: campusSyncImage,
+    evoErp: {
+      name: "EvoERP",
+      caseStudy: "/projects/evoerp",
+      github: "https://github.com/rishabhbhardwaj-dev/EvoERP",
+      live: null,
+      liveTooltip: "Core delivery scope implemented & locally verified — deployment coming soon",
+      image: evoErpImage,
     },
     jarvisAI: {
       name: "JARVIS AI Assistant",
@@ -66,6 +67,14 @@ export const siteConfig = {
       live: null,
       liveTooltip: "Desktop application - deployment coming soon",
       image: jarvisImage,
+    },
+    campusSync: {
+      name: "CampusSync ERP",
+      caseStudy: "/projects/campussync",
+      github: "https://github.com/rishabhbhardwaj-dev/CampusSyncERP",
+      live: "https://campus-sync-erp.vercel.app/",
+      liveTooltip: "View Live Demo",
+      image: campusSyncImage,
     },
   },
 
