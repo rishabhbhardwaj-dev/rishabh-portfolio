@@ -62,7 +62,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-12 sm:py-16 w-full border-t border-[#2A2925] scroll-mt-20">
+    <section id="about" className="pt-8 pb-12 sm:py-16 w-full border-t border-[#2A2925] scroll-mt-20">
       <div>
         
         {/* MOBILE ONLY: Portrait image placed ABOVE 01 // ABOUT heading */}
@@ -73,7 +73,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="block sm:hidden mb-6"
         >
-          <div className="w-full max-w-[240px] aspect-[3/4] mx-auto rounded-xl overflow-hidden border border-white/10 bg-white/5 relative">
+          <div className="w-full max-w-[280px] aspect-[3/4] mx-auto rounded-xl overflow-hidden border border-white/10 bg-white/5 relative">
             <img 
               src={profileImage} 
               alt="Rishabh Bhardwaj" 
