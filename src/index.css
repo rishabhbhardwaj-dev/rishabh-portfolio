@@ -1,17 +1,68 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-page: #FAF9F6;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F4F2EC;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: rgba(0, 0, 0, 0.02);
+  --bg-card-hover: rgba(0, 0, 0, 0.04);
+  --text-primary: #171715;
+  --text-secondary: #5A5955;
+  --text-muted: #8C8B85;
+  --border-token: #E5E3DC;
+  --border-subtle: rgba(0, 0, 0, 0.08);
+  --border-hover: rgba(67, 102, 141, 0.35);
+  --accent-primary: #43668D;
+  --accent-hover: #345272;
+  --nav-bg-scrolled: rgba(250, 249, 246, 0.92);
+  --noise-opacity: 0.06;
+  --vignette-color: rgba(67, 102, 141, 0.03);
+}
+
+.dark {
+  --bg-page: #11110F;
+  --bg-surface: #171714;
+  --bg-surface-subtle: #141411;
+  --bg-card: rgba(255, 255, 255, 0.03);
+  --bg-card-subtle: rgba(255, 255, 255, 0.02);
+  --bg-card-hover: rgba(255, 255, 255, 0.06);
+  --text-primary: #F1EFE8;
+  --text-secondary: #A7A59D;
+  --text-muted: #77766F;
+  --border-token: #2A2925;
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 255, 255, 0.2);
+  --accent-primary: #5B7FA6;
+  --accent-hover: #7598BE;
+  --nav-bg-scrolled: rgba(17, 17, 15, 0.95);
+  --noise-opacity: 0.2;
+  --vignette-color: rgba(91, 127, 166, 0.04);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  html:not(.dark) {
+    color-scheme: light;
   }
   body {
-    @apply bg-background text-[#F1EFE8] antialiased font-sans;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    @apply antialiased font-sans transition-colors duration-200;
     overflow-x: hidden;
   }
 
   :focus-visible {
-    outline: 2px solid #5B7FA6;
+    outline: 2px solid var(--accent-primary);
     outline-offset: 3px;
     border-radius: 4px;
   }
@@ -19,13 +70,13 @@
 
 @layer utilities {
   .glass {
-    @apply bg-[#171714]/80 backdrop-blur-md border border-[#2A2925];
+    @apply bg-surface/80 backdrop-blur-md border border-borderToken;
   }
   .glass-card {
-    @apply bg-[#171714] backdrop-blur-md border border-[#2A2925] rounded-2xl shadow-lg hover:border-[#5B7FA6]/40 transition-all duration-300;
+    @apply bg-surface backdrop-blur-md border border-borderToken rounded-2xl shadow-lg hover:border-primary/40 transition-all duration-300;
   }
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F1EFE8] via-[#A7A59D] to-[#77766F];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-textPrimary via-textSecondary to-textMuted;
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;

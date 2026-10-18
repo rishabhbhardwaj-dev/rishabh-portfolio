@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -7,18 +8,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: '#11110F',
-        surface: '#171714',
-        surfaceDark: '#141411',
-        primary: '#5B7FA6',
-        primaryHover: '#7598BE',
-        accent: '#5B7FA6',
-        accent1: '#5B7FA6',
-        accent2: '#7598BE',
-        textPrimary: '#F1EFE8',
-        textSecondary: '#A7A59D',
-        textMuted: '#77766F',
-        borderToken: '#2A2925',
+        background: 'var(--bg-page)',
+        surface: 'var(--bg-surface)',
+        surfaceDark: 'var(--bg-surface-subtle)',
+        primary: 'var(--accent-primary)',
+        primaryHover: 'var(--accent-hover)',
+        accent: 'var(--accent-primary)',
+        accent1: 'var(--accent-primary)',
+        accent2: 'var(--accent-hover)',
+        textPrimary: 'var(--text-primary)',
+        textSecondary: 'var(--text-secondary)',
+        textMuted: 'var(--text-muted)',
+        borderToken: 'var(--border-token)',
         statusGreen: '#6F9275',
       },
       fontFamily: {
