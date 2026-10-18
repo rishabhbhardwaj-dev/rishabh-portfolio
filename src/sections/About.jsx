@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Cpu, Lightbulb, Code2, Database, GraduationCap, MapPin, Briefcase, Monitor, Calendar } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
-import profileImage from '../assets/profile.jpg';
 
 export default function About() {
   const cards = [
@@ -62,25 +61,8 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="pt-8 pb-12 sm:py-16 w-full border-t border-[#2A2925] scroll-mt-20">
+    <section id="about" className="py-12 sm:py-16 w-full border-t border-[#2A2925] scroll-mt-20">
       <div>
-        
-        {/* MOBILE ONLY: Portrait image placed ABOVE 01 // ABOUT heading */}
-        <motion.div 
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="block sm:hidden mb-6"
-        >
-          <div className="w-full max-w-[280px] aspect-[3/4] mx-auto rounded-xl overflow-hidden border border-white/10 bg-white/5 relative">
-            <img 
-              src={profileImage} 
-              alt="Rishabh Bhardwaj" 
-              className="w-full h-full object-cover object-top grayscale filter contrast-105" 
-            />
-          </div>
-        </motion.div>
 
         {/* Section Header Label: 01 // ABOUT */}
         <motion.div 
@@ -96,7 +78,7 @@ export default function About() {
         {/* Two-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           
-          {/* Left Column: Storytelling & Desktop Profile Image */}
+          {/* Left Column: Storytelling */}
           <motion.div 
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -104,21 +86,12 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="text-base text-gray-300 leading-relaxed space-y-6"
           >
-            {/* DESKTOP/TABLET ONLY: Profile Image floated inside text */}
-            <div className="hidden sm:block sm:float-left w-full sm:w-48 md:w-52 aspect-[4/5] sm:mr-6 sm:mb-4 mb-6 rounded-xl overflow-hidden border border-white/10 bg-white/5 relative">
-              <img 
-                src={profileImage} 
-                alt="Rishabh Bhardwaj" 
-                className="w-full h-full object-cover object-top grayscale filter contrast-105" 
-              />
-            </div>
             <p>
               I am a Software Developer and AI Engineer who completed a Bachelor of Technology (B.Tech) in Computer Science & Engineering from Sir Chhotu Ram Institute of Engineering and Technology (SCRIET), CCSU Meerut in May 2026 with an 8.6 / 10 CGPA. My work focuses on building full-stack applications and AI-driven software that tackle complex operational challenges.
             </p>
             <p>
               My background includes developing <span className="text-white font-medium">CampusSync ERP</span>—a multi-module university management platform handling student lifecycles, attendance, and role-based permissions—and <span className="text-white font-medium">JARVIS AI</span>, a voice and text assistant built with LLM integrations and custom task automation workflows.
             </p>
-            <div className="clear-both" />
           </motion.div>
 
           {/* Right Column: Key Focus Cards */}
