@@ -3,21 +3,30 @@ import { motion } from 'framer-motion';
 import { siteConfig } from '../data/siteConfig';
 import profileImage from '../assets/profile.jpg';
 import heroWavesLight from '../assets/hero-waves-light.png';
+import heroWavesDark from '../assets/hero-waves-dark.png';
 
 export default function Hero() {
   const ease = [0.16, 1, 0.3, 1];
 
   return (
     <header className="relative w-full min-h-[660px] md:min-h-[calc(100vh-5rem)] md:max-h-[850px] flex flex-col justify-start md:justify-center pt-32 sm:pt-24 pb-8 sm:pb-12 md:pb-16 overflow-hidden">
-      {/* Light-theme Hero Wave Background (Reference-inspired decorative wave mesh) */}
+      {/* Hero Wave Background Layer */}
       <div 
-        className="absolute inset-0 pointer-events-none select-none z-0 dark:hidden overflow-hidden" 
+        className="absolute inset-0 pointer-events-none select-none z-0 overflow-hidden" 
         aria-hidden="true"
       >
+        {/* Light-theme Wave (Preserved) */}
         <img 
           src={heroWavesLight} 
           alt="" 
-          className="w-full h-full object-cover object-center opacity-85" 
+          className="w-full h-full object-cover object-center opacity-85 dark:hidden" 
+          loading="eager"
+        />
+        {/* Dark-theme Wave (Harmonized Steel-Blue Mesh) */}
+        <img 
+          src={heroWavesDark} 
+          alt="" 
+          className="w-full h-full object-cover object-center opacity-25 hidden dark:block" 
           loading="eager"
         />
       </div>
