@@ -125,7 +125,7 @@ export default function Hero() {
             <h3 className="text-[11px] sm:text-xs font-mono font-medium tracking-widest text-textSecondary uppercase">
               SPECIALIZING IN
             </h3>
-            <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-1.5 mt-2 text-xs sm:text-sm font-mono font-medium tracking-wider text-textPrimary">
+            <div className="flex flex-nowrap items-center gap-x-1.5 sm:gap-x-3 mt-2 text-[10px] sm:text-sm font-mono font-medium tracking-normal sm:tracking-wider text-textPrimary">
               <span className="whitespace-nowrap">FULL STACK</span>
               <span className="text-primary font-normal select-none" aria-hidden="true">/</span>
               <span className="whitespace-nowrap">BACKEND SYSTEMS</span>
