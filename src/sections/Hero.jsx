@@ -66,7 +66,7 @@ export default function Hero() {
           </p>
 
           {/* Simple Document Text Links with Icons */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-5 mt-3 sm:mt-3.5 md:mt-5 text-xs sm:text-sm font-mono text-textSecondary">
+          <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-4 md:gap-x-5 gap-y-1.5 mt-3 sm:mt-3.5 md:mt-5 text-[11px] sm:text-xs md:text-sm font-mono text-textSecondary">
             <a 
               href={siteConfig.social.github} 
               target="_blank" 
@@ -121,16 +121,20 @@ export default function Hero() {
           </div>
 
           {/* Thin horizontal divider & Editorial Role Signature */}
-          <div className="pt-6 sm:pt-7 md:pt-8 mt-6 sm:mt-7 md:mt-8 border-t border-borderToken">
-            <h3 className="text-[11px] sm:text-xs font-mono font-medium tracking-widest text-textSecondary uppercase">
+          <div className="pt-4 sm:pt-5 md:pt-6 mt-4 sm:mt-5 md:mt-6 border-t border-borderToken">
+            <h3 className="text-[10px] sm:text-[10.5px] md:text-[11px] font-mono font-normal tracking-wider text-textMuted uppercase mb-1 sm:mb-1.5">
               SPECIALIZING IN
             </h3>
-            <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-1.5 mt-2 text-xs sm:text-sm font-mono font-medium tracking-wider text-textPrimary">
+            <div className="flex flex-wrap items-center gap-y-1 text-xs sm:text-[13px] md:text-sm font-mono font-medium tracking-normal sm:tracking-wide text-textPrimary">
               <span className="whitespace-nowrap">FULL STACK</span>
-              <span className="text-primary font-normal select-none" aria-hidden="true">/</span>
-              <span className="whitespace-nowrap">BACKEND SYSTEMS</span>
-              <span className="text-primary font-normal select-none" aria-hidden="true">/</span>
-              <span className="whitespace-nowrap">AI APPLICATIONS</span>
+              <span className="inline-flex items-center whitespace-nowrap">
+                <span className="text-primary font-light select-none px-1.5 sm:px-2" aria-hidden="true">/</span>
+                <span>BACKEND SYSTEMS</span>
+              </span>
+              <span className="inline-flex items-center whitespace-nowrap">
+                <span className="text-primary font-light select-none px-1.5 sm:px-2" aria-hidden="true">/</span>
+                <span>AI APPLICATIONS</span>
+              </span>
             </div>
           </div>
         </div>
