@@ -91,7 +91,7 @@ export default function Projects() {
   }, [goNext, goPrev]);
 
   return (
-    <section id="projects" className="py-12 sm:py-16 w-full border-t border-[#2A2925] overflow-hidden scroll-mt-20">
+    <section id="projects" className="py-12 sm:py-16 w-full border-t border-borderToken overflow-hidden scroll-mt-20">
       <div>
 
         {/* Section Header */}
@@ -103,19 +103,19 @@ export default function Projects() {
           className="mb-8 flex items-center justify-between"
         >
           <div>
-            <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B7FA6] uppercase">03 // PROJECTS</h2>
+            <h2 className="text-xs font-mono font-bold tracking-widest text-primary uppercase">03 // PROJECTS</h2>
           </div>
 
           {/* Navigation Controls */}
           <div className="flex items-center gap-3">
-            <span className="text-xs text-gray-400 font-mono mr-2">
+            <span className="text-xs text-textMuted font-mono mr-2">
               {String(current + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
             </span>
             <button
               onClick={goPrev}
               disabled={current === 0}
               aria-label="Previous project"
-              className="p-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-300 hover:text-white hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary"
+              className="p-2 rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
             >
               <ChevronLeft size={16} />
             </button>
@@ -123,7 +123,7 @@ export default function Projects() {
               onClick={goNext}
               disabled={current === total - 1}
               aria-label="Next project"
-              className="p-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-300 hover:text-white hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary"
+              className="p-2 rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
             >
               <ChevronRight size={16} />
             </button>
@@ -131,7 +131,7 @@ export default function Projects() {
         </motion.div>
 
         {/* Project Card Display */}
-        <div className="relative w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 md:p-8">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-borderToken bg-surface dark:border-white/10 dark:bg-white/[0.02] p-6 md:p-8 shadow-sm dark:shadow-none">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={current}
@@ -147,7 +147,7 @@ export default function Projects() {
 
                 {/* Project Image */}
                 <div className="w-full lg:w-[50%]">
-                  <div className="relative rounded-xl overflow-hidden border border-white/10 bg-slate-950 aspect-[16/10]">
+                  <div className="relative rounded-xl overflow-hidden border border-borderToken dark:border-white/10 bg-surfaceDark dark:bg-slate-950 aspect-[16/10]">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -158,13 +158,13 @@ export default function Projects() {
 
                 {/* Project Info */}
                 <div className="w-full lg:w-[50%] flex flex-col items-start">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 tracking-tight">{project.title}</h3>
-                  <p className="text-gray-300 text-sm md:text-base leading-relaxed mb-6 font-normal">{project.overview}</p>
+                  <h3 className="text-2xl md:text-3xl font-bold text-textPrimary mb-3 tracking-tight">{project.title}</h3>
+                  <p className="text-textSecondary text-sm md:text-base leading-relaxed mb-6 font-normal">{project.overview}</p>
 
                   {/* Feature Highlights */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6 w-full">
                     {project.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center gap-2 text-gray-300 text-xs font-medium">
+                      <div key={idx} className="flex items-center gap-2 text-textSecondary text-xs font-medium">
                         <Check size={14} className="text-primary shrink-0" />
                         <span>{feature}</span>
                       </div>
@@ -176,7 +176,7 @@ export default function Projects() {
                     {project.tech.map((chip, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-1 text-xs font-medium text-gray-300 bg-white/5 border border-white/10 rounded-md"
+                        className="px-2.5 py-1 text-xs font-medium text-textSecondary bg-surfaceDark border border-borderToken dark:text-gray-300 dark:bg-white/5 dark:border-white/10 rounded-md"
                       >
                         {chip}
                       </span>
@@ -188,14 +188,14 @@ export default function Projects() {
                     {project.links.caseStudy ? (
                       <Link
                         to={project.links.caseStudy}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white text-black font-medium text-xs transition-colors hover:bg-gray-200 focus-visible:ring-2 focus-visible:ring-primary"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-textPrimary text-background font-medium text-xs transition-colors hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary shadow-sm"
                       >
                         <FileText size={14} /> Case Study
                       </Link>
                     ) : (
                       <span
                         title="Case Study coming soon"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/5 text-gray-500 font-medium text-xs cursor-not-allowed select-none"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surfaceDark border border-borderToken text-textMuted dark:bg-white/[0.02] dark:border-white/5 dark:text-gray-500 font-medium text-xs cursor-not-allowed select-none"
                       >
                         <FileText size={14} /> Case Study
                       </span>
@@ -204,7 +204,7 @@ export default function Projects() {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white font-medium text-xs transition-colors hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-primary"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-borderToken text-textPrimary hover:bg-surfaceDark dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 font-medium text-xs transition-colors focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
                     >
                       GitHub Repo
                     </a>
@@ -213,14 +213,14 @@ export default function Projects() {
                         href={project.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-white font-medium text-xs transition-colors hover:bg-white/10 focus-visible:ring-2 focus-visible:ring-primary"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-borderToken text-textPrimary hover:bg-surfaceDark dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 font-medium text-xs transition-colors focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
                       >
                         <ExternalLink size={14} /> Live Demo
                       </a>
                     ) : (
                       <span
                         title={project.links.liveTooltip}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.02] border border-white/5 text-gray-500 font-medium text-xs cursor-not-allowed select-none"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surfaceDark border border-borderToken text-textMuted dark:bg-white/[0.02] dark:border-white/5 dark:text-gray-500 font-medium text-xs cursor-not-allowed select-none"
                       >
                         <ExternalLink size={14} /> Live Demo
                       </span>

@@ -61,7 +61,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-12 sm:py-16 w-full border-t border-[#2A2925] scroll-mt-20">
+    <section id="about" className="py-12 sm:py-16 w-full border-t border-borderToken scroll-mt-20">
       <div>
 
         {/* Section Header Label: 01 // ABOUT */}
@@ -72,7 +72,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B7FA6] uppercase">01 // ABOUT</h2>
+          <h2 className="text-xs font-mono font-bold tracking-widest text-primary uppercase">01 // ABOUT</h2>
         </motion.div>
 
         {/* Two-Column Grid */}
@@ -84,13 +84,13 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-base text-gray-300 leading-relaxed space-y-6"
+            className="text-base text-textSecondary leading-relaxed space-y-6"
           >
             <p>
               I am a Software Developer and AI Engineer who completed a Bachelor of Technology (B.Tech) in Computer Science & Engineering from Sir Chhotu Ram Institute of Engineering and Technology (SCRIET), CCSU Meerut in May 2026 with an 8.6 / 10 CGPA. My work focuses on building full-stack applications and AI-driven software that tackle complex operational challenges.
             </p>
             <p>
-              My background includes developing <span className="text-white font-medium">CampusSync ERP</span>—a multi-module university management platform handling student lifecycles, attendance, and role-based permissions—and <span className="text-white font-medium">JARVIS AI</span>, a voice and text assistant built with LLM integrations and custom task automation workflows.
+              My background includes developing <span className="text-textPrimary font-medium">CampusSync ERP</span>—a multi-module university management platform handling student lifecycles, attendance, and role-based permissions—and <span className="text-textPrimary font-medium">JARVIS AI</span>, a voice and text assistant built with LLM integrations and custom task automation workflows.
             </p>
           </motion.div>
 
@@ -105,15 +105,15 @@ export default function About() {
             {cards.map((card, idx) => (
               <div 
                 key={idx}
-                className="p-5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-white/20 transition-colors duration-200"
+                className="p-5 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-2.5 rounded-lg bg-white/5 border border-white/10 shrink-0">
+                  <div className="p-2.5 rounded-lg bg-surfaceDark dark:bg-white/5 border border-borderToken dark:border-white/10 shrink-0">
                     {card.icon}
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white mb-1">{card.title}</h3>
-                    <p className="text-gray-400 text-xs md:text-sm leading-relaxed">{card.description}</p>
+                    <h3 className="text-base font-semibold text-textPrimary mb-1">{card.title}</h3>
+                    <p className="text-textMuted text-xs md:text-sm leading-relaxed">{card.description}</p>
                   </div>
                 </div>
               </div>
@@ -131,12 +131,12 @@ export default function About() {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col items-start p-5 rounded-xl bg-white/[0.03] border border-white/10">
-              <div className="text-gray-400 mb-2">
+            <div key={idx} className="flex flex-col items-start p-5 rounded-xl bg-surface border border-borderToken dark:bg-white/[0.03] dark:border-white/10 shadow-sm dark:shadow-none">
+              <div className="text-textMuted mb-2">
                 {stat.icon}
               </div>
-              <div className="text-2xl font-bold text-white mb-0.5 tracking-tight">{stat.value}</div>
-              <div className="text-xs font-medium text-gray-400">{stat.label}</div>
+              <div className="text-2xl font-bold text-textPrimary mb-0.5 tracking-tight">{stat.value}</div>
+              <div className="text-xs font-medium text-textMuted">{stat.label}</div>
             </div>
           ))}
         </motion.div>
@@ -149,30 +149,30 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="mt-12"
         >
-          <h3 className="text-sm font-semibold tracking-wider text-gray-400 uppercase mb-4">Profile Summary</h3>
+          <h3 className="text-sm font-semibold tracking-wider text-textMuted uppercase mb-4">Profile Summary</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
             {profileSnapshot.map((item, idx) => (
               <div
                 key={idx}
-                className={`p-4 rounded-xl bg-white/[0.03] border border-white/10 ${
+                className={`p-4 rounded-xl bg-surface border border-borderToken dark:bg-white/[0.03] dark:border-white/10 shadow-sm dark:shadow-none ${
                   item.detail ? 'md:col-span-2 lg:col-span-2' : ''
                 }`}
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="p-1.5 rounded bg-white/5 border border-white/10">
+                  <div className="p-1.5 rounded bg-surfaceDark dark:bg-white/5 border border-borderToken dark:border-white/10">
                     {item.icon}
                   </div>
-                  <span className="text-xs font-medium text-gray-400 uppercase tracking-wider">{item.label}</span>
+                  <span className="text-xs font-medium text-textMuted uppercase tracking-wider">{item.label}</span>
                 </div>
-                <p className="text-white font-medium text-sm">{item.value}</p>
+                <p className="text-textPrimary font-medium text-sm">{item.value}</p>
                 {item.subValue && (
-                  <p className="text-gray-300 text-xs mt-0.5">{item.subValue}</p>
+                  <p className="text-textSecondary text-xs mt-0.5">{item.subValue}</p>
                 )}
                 {item.detail && (
-                  <p className="text-gray-400 text-xs mt-2 leading-relaxed">{item.detail}</p>
+                  <p className="text-textMuted text-xs mt-2 leading-relaxed">{item.detail}</p>
                 )}
                 {item.subDetail && (
-                  <p className="text-gray-500 text-xs mt-0.5">{item.subDetail}</p>
+                  <p className="text-textMuted/80 text-xs mt-0.5">{item.subDetail}</p>
                 )}
               </div>
             ))}

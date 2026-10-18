@@ -16,7 +16,7 @@ export default function Hero() {
       >
         {/* Mobile: Top, aligned left | Desktop: Right column */}
         <div className="order-1 md:order-2 shrink-0 self-start md:self-center">
-          <div className="w-36 h-36 sm:w-40 sm:h-40 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border border-white/10 bg-white/5 relative shrink-0 shadow-xl">
+          <div className="w-36 h-36 sm:w-40 sm:h-40 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full overflow-hidden border border-borderToken bg-surface dark:border-white/10 dark:bg-white/5 relative shrink-0 shadow-xl">
             <img 
               src={profileImage} 
               alt={siteConfig.name} 
@@ -28,29 +28,29 @@ export default function Hero() {
 
         {/* Mobile: Below portrait | Desktop: Left column */}
         <div className="order-2 md:order-1 flex-1 max-w-2xl">
-          {/* Full Name in Warm Ivory */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#F1EFE8] leading-[1.08]">
+          {/* Full Name in Warm Ivory (Dark) / Deep Charcoal (Light) */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-textPrimary leading-[1.08]">
             {siteConfig.name}
           </h1>
 
           {/* Primary Role in Muted Steel Blue Accent */}
-          <h2 className="text-lg sm:text-lg md:text-xl font-medium text-[#5B7FA6] tracking-tight mt-3 sm:mt-1.5 md:mt-2.5">
+          <h2 className="text-lg sm:text-lg md:text-xl font-medium text-primary tracking-tight mt-3 sm:mt-1.5 md:mt-2.5">
             {siteConfig.title}
           </h2>
 
           {/* Factual Concise Introduction Paragraph */}
-          <p className="text-sm sm:text-base text-[#A7A59D] leading-normal sm:leading-relaxed font-normal max-w-xl mt-2 sm:mt-2.5 md:mt-3.5">
+          <p className="text-sm sm:text-base text-textSecondary leading-normal sm:leading-relaxed font-normal max-w-xl mt-2 sm:mt-2.5 md:mt-3.5">
             Building scalable full-stack web applications, university ERP platforms, and AI-powered voice and text software.
           </p>
 
           {/* Simple Document Text Links with Icons */}
-          <div className="flex flex-wrap items-center gap-4 sm:gap-5 mt-3 sm:mt-3.5 md:mt-5 text-xs sm:text-sm font-mono text-[#A7A59D]">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-5 mt-3 sm:mt-3.5 md:mt-5 text-xs sm:text-sm font-mono text-textSecondary">
             <a 
               href={siteConfig.social.github} 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="GitHub Profile" 
-              className="inline-flex items-center gap-1.5 hover:text-[#5B7FA6] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B7FA6] rounded-sm"
+              className="inline-flex items-center gap-1.5 hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
@@ -65,13 +65,13 @@ export default function Hero() {
               </svg>
               <span>GitHub ↗</span>
             </a>
-            <span className="text-[#2A2925]">·</span>
+            <span className="text-borderToken">·</span>
             <a 
               href={siteConfig.social.linkedin} 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="LinkedIn Profile" 
-              className="inline-flex items-center gap-1.5 hover:text-[#5B7FA6] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B7FA6] rounded-sm"
+              className="inline-flex items-center gap-1.5 hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
             >
               <svg 
                 xmlns="http://www.w3.org/2000/svg" 
@@ -86,13 +86,13 @@ export default function Hero() {
               </svg>
               <span>LinkedIn ↗</span>
             </a>
-            <span className="text-[#2A2925]">·</span>
+            <span className="text-borderToken">·</span>
             <a 
               href={siteConfig.resumePath} 
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="Resume Document" 
-              className="hover:text-[#5B7FA6] transition-colors focus-visible:ring-2 focus-visible:ring-[#5B7FA6] rounded-sm"
+              className="hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
             >
               Resume ↗
             </a>

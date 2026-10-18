@@ -93,7 +93,7 @@ export default function EvoErpCaseStudy() {
   ];
 
   return (
-    <div className="relative min-h-screen text-white selection:bg-primary/30 overflow-x-hidden bg-[#11110F]">
+    <div className="relative min-h-screen text-white selection:bg-primary/30 overflow-x-hidden bg-background">
       <Background />
       
       {/* Top Navigation */}
@@ -101,7 +101,7 @@ export default function EvoErpCaseStudy() {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="fixed top-0 left-0 right-0 z-50 py-4 bg-[#11110F]/80 backdrop-blur-xl border-b border-white/5"
+        className="fixed top-0 left-0 right-0 z-50 py-4 bg-background/80 backdrop-blur-xl border-b border-white/5"
       >
         <div className="container mx-auto max-w-5xl px-6 flex items-center justify-between">
           <Link 

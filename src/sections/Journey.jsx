@@ -95,7 +95,7 @@ export default function Journey() {
   };
 
   return (
-    <section id="journey" className="py-12 sm:py-16 w-full border-t border-[#2A2925] overflow-hidden scroll-mt-20">
+    <section id="journey" className="py-12 sm:py-16 w-full border-t border-borderToken overflow-hidden scroll-mt-20">
       <div>
 
         {/* Section Header */}
@@ -106,7 +106,7 @@ export default function Journey() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B7FA6] uppercase">02 // EXPERIENCE</h2>
+          <h2 className="text-xs font-mono font-bold tracking-widest text-primary uppercase">02 // EXPERIENCE</h2>
         </motion.div>
 
         {/* Quieter Counter & Controls */}
@@ -115,12 +115,12 @@ export default function Journey() {
             onClick={goPrev}
             disabled={current === 0}
             aria-label="Previous milestone"
-            className="p-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-400 hover:text-white hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary"
+            className="p-2 rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
           >
             <ChevronLeft size={16} />
           </button>
 
-          <span className="text-xs font-mono text-gray-400">
+          <span className="text-xs font-mono text-textMuted">
             {String(current + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
           </span>
 
@@ -128,14 +128,14 @@ export default function Journey() {
             onClick={goNext}
             disabled={current === total - 1}
             aria-label="Next milestone"
-            className="p-2 rounded-full border border-white/10 bg-white/[0.03] text-gray-400 hover:text-white hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary"
+            className="p-2 rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
           >
             <ChevronRight size={16} />
           </button>
         </div>
 
         {/* Milestone Display Box */}
-        <div className="relative w-full min-h-[260px] flex items-center justify-center mb-10 border border-white/10 bg-white/[0.02] rounded-2xl p-6 md:p-10">
+        <div className="relative w-full min-h-[260px] flex items-center justify-center mb-10 border border-borderToken bg-surface dark:border-white/10 dark:bg-white/[0.02] rounded-2xl p-6 md:p-10 shadow-sm dark:shadow-none">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
               key={current}
@@ -155,7 +155,7 @@ export default function Journey() {
               <div className="flex flex-col items-center text-center px-2">
 
                 {/* Milestone Icon */}
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mb-4">
+                <div className="w-12 h-12 rounded-xl bg-surfaceDark border border-borderToken dark:bg-white/5 dark:border-white/10 flex items-center justify-center mb-4">
                   {item.icon}
                 </div>
 
@@ -165,12 +165,12 @@ export default function Journey() {
                 </span>
 
                 {/* Title */}
-                <h3 className="text-xl font-bold text-white mb-3 max-w-md">
+                <h3 className="text-xl font-bold text-textPrimary mb-3 max-w-md">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-300 text-sm leading-relaxed max-w-lg font-normal">
+                <p className="text-textSecondary text-sm leading-relaxed max-w-lg font-normal">
                   {item.description}
                 </p>
 
@@ -181,7 +181,7 @@ export default function Journey() {
 
         {/* Node Navigation */}
         <div className="relative flex items-center justify-center">
-          <div className="absolute top-1/2 left-[5%] right-[5%] h-[1px] bg-white/10 -translate-y-1/2" />
+          <div className="absolute top-1/2 left-[5%] right-[5%] h-[1px] bg-borderToken dark:bg-white/10 -translate-y-1/2" />
 
           <div className="relative flex items-center justify-between w-full max-w-md px-4">
             {journeyData.map((node, idx) => (
@@ -197,14 +197,14 @@ export default function Journey() {
                     (idx === current
                       ? "bg-primary border-primary scale-110"
                       : idx < current
-                      ? "bg-white/40 border-white/20"
-                      : "bg-background border-white/20")
+                      ? "bg-primary/40 border-primary/30"
+                      : "bg-surface border-borderToken dark:bg-background dark:border-white/20")
                   }
                 />
                 <span
                   className={
                     "text-[10px] font-mono transition-colors duration-200 " +
-                    (idx === current ? "text-white font-bold" : "text-gray-500")
+                    (idx === current ? "text-textPrimary font-bold" : "text-textMuted")
                   }
                 >
                   {node.navYear || node.year}

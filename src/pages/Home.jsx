@@ -10,7 +10,7 @@ import Background from '../components/Background';
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen text-[#F1EFE8] bg-[#11110F] selection:bg-[#5B7FA6]/30 overflow-x-hidden">
+    <div className="relative min-h-screen text-textPrimary bg-background selection:bg-primary/30 overflow-x-hidden transition-colors duration-200">
       <Background />
       <Navbar />
       

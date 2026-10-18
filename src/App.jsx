@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext';
 import Home from './pages/Home';
 import EvoErpCaseStudy from './pages/EvoErpCaseStudy';
 import CampusSyncCaseStudy from './pages/CampusSyncCaseStudy';
@@ -9,16 +10,18 @@ import Terms from './pages/Terms';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects/evoerp" element={<EvoErpCaseStudy />} />
-        <Route path="/projects/campussync" element={<CampusSyncCaseStudy />} />
-        <Route path="/projects/jarvis" element={<JarvisCaseStudy />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-      </Routes>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects/evoerp" element={<EvoErpCaseStudy />} />
+          <Route path="/projects/campussync" element={<CampusSyncCaseStudy />} />
+          <Route path="/projects/jarvis" element={<JarvisCaseStudy />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

@@ -84,7 +84,7 @@ function MarqueeRow({ items, direction, speed }) {
         {doubled.map((tech, idx) => (
           <div
             key={idx}
-            className="relative flex items-center gap-2.5 flex-shrink-0 group px-3 py-1.5 rounded-lg border border-white/5 bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/15 transition-all duration-200"
+            className="relative flex items-center gap-2.5 flex-shrink-0 group px-3 py-1.5 rounded-lg border border-borderToken bg-surface hover:bg-surfaceDark hover:border-primary/40 dark:border-white/5 dark:bg-white/[0.02] dark:hover:bg-white/[0.06] dark:hover:border-white/15 transition-all duration-200 shadow-sm dark:shadow-none"
             title={tech.name}
           >
             <div className="w-5 h-5 flex items-center justify-center shrink-0">
@@ -99,7 +99,7 @@ function MarqueeRow({ items, direction, speed }) {
                 </span>
               )}
             </div>
-            <span className="text-xs font-medium text-gray-300 group-hover:text-white transition-colors">
+            <span className="text-xs font-medium text-textSecondary group-hover:text-textPrimary transition-colors">
               {tech.name}
             </span>
           </div>
@@ -111,7 +111,7 @@ function MarqueeRow({ items, direction, speed }) {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-12 sm:py-16 w-full border-t border-[#2A2925] overflow-hidden scroll-mt-20">
+    <section id="skills" className="py-12 sm:py-16 w-full border-t border-borderToken overflow-hidden scroll-mt-20">
       <div>
 
         <motion.div
@@ -121,7 +121,7 @@ export default function Skills() {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B7FA6] uppercase">04 // SKILLS</h2>
+          <h2 className="text-xs font-mono font-bold tracking-widest text-primary uppercase">04 // SKILLS</h2>
         </motion.div>
 
         <div className="flex flex-col gap-6">
