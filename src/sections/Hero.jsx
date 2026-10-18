@@ -7,12 +7,12 @@ export default function Hero() {
   const ease = [0.16, 1, 0.3, 1];
 
   return (
-    <header className="relative w-full min-h-[660px] md:min-h-[calc(100vh-5rem)] md:max-h-[850px] flex flex-col justify-start md:justify-center pt-28 sm:pt-24 pb-8 sm:pb-12 md:pb-16">
+    <header className="relative w-full min-h-[660px] md:min-h-[calc(100vh-5rem)] md:max-h-[850px] flex flex-col justify-start md:justify-center pt-32 sm:pt-24 pb-8 sm:pb-12 md:pb-16">
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease }}
-        className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-2.5 sm:gap-3.5 md:gap-12 lg:gap-16 md:my-auto"
+        className="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 sm:gap-3.5 md:gap-12 lg:gap-16 md:my-auto"
       >
         {/* Mobile: Top, aligned left | Desktop: Right column */}
         <div className="order-1 md:order-2 shrink-0 self-start md:self-center">
@@ -34,7 +34,7 @@ export default function Hero() {
           </h1>
 
           {/* Primary Role in Muted Steel Blue Accent */}
-          <h2 className="text-base sm:text-lg md:text-xl font-medium text-[#5B7FA6] tracking-tight mt-1 sm:mt-1.5 md:mt-2.5">
+          <h2 className="text-lg sm:text-lg md:text-xl font-medium text-[#5B7FA6] tracking-tight mt-3 sm:mt-1.5 md:mt-2.5">
             {siteConfig.title}
           </h2>
 
