@@ -119,6 +119,20 @@ export default function Hero() {
               Resume ↗
             </a>
           </div>
+
+          {/* Thin horizontal divider & Editorial Role Signature */}
+          <div className="pt-6 sm:pt-7 md:pt-8 mt-6 sm:mt-7 md:mt-8 border-t border-borderToken">
+            <h3 className="text-[11px] sm:text-xs font-mono font-medium tracking-widest text-textSecondary uppercase">
+              SPECIALIZING IN
+            </h3>
+            <div className="flex flex-wrap items-center gap-x-2.5 sm:gap-x-3 gap-y-1.5 mt-2 text-xs sm:text-sm font-mono font-medium tracking-wider text-textPrimary">
+              <span className="whitespace-nowrap">FULL STACK</span>
+              <span className="text-primary font-normal select-none" aria-hidden="true">/</span>
+              <span className="whitespace-nowrap">BACKEND SYSTEMS</span>
+              <span className="text-primary font-normal select-none" aria-hidden="true">/</span>
+              <span className="whitespace-nowrap">AI APPLICATIONS</span>
+            </div>
+          </div>
         </div>
       </motion.div>
     </header>
