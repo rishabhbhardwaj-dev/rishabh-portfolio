@@ -1,63 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Terminal, Cpu, Lightbulb, Code2, Database, GraduationCap, MapPin, Briefcase, Monitor, Calendar } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 
 export default function About() {
   const cards = [
     {
+      index: "// 01",
       title: "Full Stack Development",
-      description: "Building scalable web applications from relational database schemas to interactive user interfaces.",
-      icon: <Terminal size={18} className="text-primary" />
+      description: "Building scalable web applications from relational database schemas to interactive user interfaces."
     },
     {
+      index: "// 02",
       title: "AI Integration",
-      description: "Incorporating language models, speech recognition, and intelligent automation into web and desktop software.",
-      icon: <Cpu size={18} className="text-primary" />
+      description: "Incorporating language models, speech recognition, and intelligent automation into web and desktop software."
     },
     {
+      index: "// 03",
       title: "Software Engineering",
-      description: "Designing structured codebases with role-based security, modular architectures, and RESTful APIs.",
-      icon: <Lightbulb size={18} className="text-primary" />
+      description: "Designing structured codebases with role-based security, modular architectures, and RESTful APIs."
     }
   ];
 
   const stats = [
-    { label: "Major Projects", value: "2+", icon: <Code2 size={16} /> },
-    { label: "ERP Modules", value: "8+", icon: <Database size={16} /> },
-    { label: "Core Technologies", value: "15+", icon: <Terminal size={16} /> },
-    { label: "Graduation", value: siteConfig.education.graduationYear, icon: <GraduationCap size={16} /> }
-  ];
-
-  const profileSnapshot = [
-    {
-      icon: <MapPin size={16} className="text-primary" />,
-      label: "Location",
-      value: siteConfig.location,
-    },
-    {
-      icon: <GraduationCap size={16} className="text-primary" />,
-      label: "Education",
-      value: siteConfig.education.degree,
-      subValue: siteConfig.education.field,
-      detail: siteConfig.education.institution,
-      subDetail: `${siteConfig.education.university} • CGPA: ${siteConfig.education.cgpa}`,
-    },
-    {
-      icon: <Calendar size={16} className="text-primary" />,
-      label: "Graduation",
-      value: siteConfig.education.graduationDate,
-    },
-    {
-      icon: <Briefcase size={16} className="text-primary" />,
-      label: "Current Status",
-      value: siteConfig.currentStatus,
-    },
-    {
-      icon: <Monitor size={16} className="text-primary" />,
-      label: "Focus",
-      value: siteConfig.focus.join(" • "),
-    },
+    { label: "Major Projects", value: "2+" },
+    { label: "ERP Modules", value: "8+" },
+    { label: "Core Technologies", value: "15+" },
+    { label: "Graduation", value: siteConfig.education.graduationYear }
   ];
 
   return (
@@ -105,17 +73,19 @@ export default function About() {
             {cards.map((card, idx) => (
               <div 
                 key={idx}
-                className="p-5 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none"
+                className="group p-5 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none"
               >
-                <div className="flex items-start gap-4">
-                  <div className="p-2.5 rounded-lg bg-surfaceDark dark:bg-white/5 border border-borderToken dark:border-white/10 shrink-0">
-                    {card.icon}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-textPrimary mb-1">{card.title}</h3>
-                    <p className="text-textMuted text-xs md:text-sm leading-relaxed">{card.description}</p>
-                  </div>
+                <div className="flex items-center justify-between gap-4 mb-1.5">
+                  <h3 className="text-base font-semibold text-textPrimary tracking-tight group-hover:text-primary transition-colors">
+                    {card.title}
+                  </h3>
+                  <span className="text-[11px] font-mono font-semibold text-primary tracking-wider select-none px-2 py-0.5 rounded bg-surfaceDark dark:bg-white/5 border border-borderToken dark:border-white/10 shrink-0">
+                    {card.index}
+                  </span>
                 </div>
+                <p className="text-textMuted text-xs md:text-sm leading-relaxed">
+                  {card.description}
+                </p>
               </div>
             ))}
           </motion.div>
@@ -128,15 +98,24 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="mt-14 sm:mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
         >
           {stats.map((stat, idx) => (
-            <div key={idx} className="flex flex-col items-start p-5 rounded-xl bg-surface border border-borderToken dark:bg-white/[0.03] dark:border-white/10 shadow-sm dark:shadow-none">
-              <div className="text-textMuted mb-2">
-                {stat.icon}
+            <div 
+              key={idx} 
+              className="p-5 sm:p-6 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none flex flex-col justify-between"
+            >
+              <div className="text-[10px] font-mono font-bold tracking-widest text-primary uppercase select-none mb-3">
+                {String(idx + 1).padStart(2, '0')} //
               </div>
-              <div className="text-2xl font-bold text-textPrimary mb-0.5 tracking-tight">{stat.value}</div>
-              <div className="text-xs font-medium text-textMuted">{stat.label}</div>
+              <div>
+                <div className="text-3xl sm:text-4xl font-bold text-textPrimary tracking-tight">
+                  {stat.value}
+                </div>
+                <div className="text-xs font-mono font-medium text-textMuted tracking-wider uppercase mt-1.5">
+                  {stat.label}
+                </div>
+              </div>
             </div>
           ))}
         </motion.div>
@@ -147,35 +126,93 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mt-12"
+          className="mt-12 sm:mt-14"
         >
-          <h3 className="text-sm font-semibold tracking-wider text-textMuted uppercase mb-4">Profile Summary</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-            {profileSnapshot.map((item, idx) => (
-              <div
-                key={idx}
-                className={`p-4 rounded-xl bg-surface border border-borderToken dark:bg-white/[0.03] dark:border-white/10 shadow-sm dark:shadow-none ${
-                  item.detail ? 'md:col-span-2 lg:col-span-2' : ''
-                }`}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="p-1.5 rounded bg-surfaceDark dark:bg-white/5 border border-borderToken dark:border-white/10">
-                    {item.icon}
-                  </div>
-                  <span className="text-xs font-medium text-textMuted uppercase tracking-wider">{item.label}</span>
+          <h3 className="text-xs font-mono font-bold tracking-widest text-primary uppercase mb-4">
+            PROFILE SUMMARY
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* 1. Education: Spans 2 cols on md/lg */}
+            <div className="md:col-span-2 lg:col-span-2 p-5 sm:p-6 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="text-[11px] font-mono font-bold tracking-widest text-primary uppercase select-none">
+                    EDUCATION
+                  </span>
+                  <span className="text-xs font-mono font-semibold px-2.5 py-0.5 rounded bg-surfaceDark dark:bg-white/5 border border-borderToken dark:border-white/10 text-primary">
+                    CGPA: {siteConfig.education.cgpa}
+                  </span>
                 </div>
-                <p className="text-textPrimary font-medium text-sm">{item.value}</p>
-                {item.subValue && (
-                  <p className="text-textSecondary text-xs mt-0.5">{item.subValue}</p>
-                )}
-                {item.detail && (
-                  <p className="text-textMuted text-xs mt-2 leading-relaxed">{item.detail}</p>
-                )}
-                {item.subDetail && (
-                  <p className="text-textMuted/80 text-xs mt-0.5">{item.subDetail}</p>
-                )}
+                <h4 className="text-base sm:text-lg font-bold text-textPrimary tracking-tight">
+                  {siteConfig.education.degree}
+                </h4>
+                <p className="text-xs sm:text-sm font-medium text-textSecondary mt-0.5">
+                  {siteConfig.education.field}
+                </p>
+                <div className="pt-3 mt-3 border-t border-borderToken/60 dark:border-white/5 text-xs text-textMuted space-y-0.5">
+                  <p className="leading-relaxed">{siteConfig.education.institution}</p>
+                  <p className="text-textMuted/80">{siteConfig.education.university}</p>
+                </div>
               </div>
-            ))}
+            </div>
+
+            {/* 2. Graduation: Spans 1 col */}
+            <div className="p-5 sm:p-6 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-mono font-bold tracking-widest text-primary uppercase select-none block mb-3">
+                  GRADUATION
+                </span>
+                <p className="text-base sm:text-lg font-bold text-textPrimary tracking-tight">
+                  {siteConfig.education.graduationDate}
+                </p>
+                <p className="text-xs font-mono text-textMuted mt-1">
+                  Class of {siteConfig.education.graduationYear}
+                </p>
+              </div>
+            </div>
+
+            {/* 3. Current Status: Spans 2 cols on lg, 1 col on md */}
+            <div className="md:col-span-1 lg:col-span-2 p-5 sm:p-6 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-mono font-bold tracking-widest text-primary uppercase select-none block mb-3">
+                  CURRENT STATUS
+                </span>
+                <p className="text-sm sm:text-base font-semibold text-textPrimary leading-snug">
+                  {siteConfig.currentStatus}
+                </p>
+              </div>
+            </div>
+
+            {/* 4. Location: Spans 1 col */}
+            <div className="p-5 sm:p-6 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none flex flex-col justify-between">
+              <div>
+                <span className="text-[11px] font-mono font-bold tracking-widest text-primary uppercase select-none block mb-3">
+                  LOCATION
+                </span>
+                <p className="text-sm sm:text-base font-semibold text-textPrimary">
+                  {siteConfig.location}
+                </p>
+              </div>
+            </div>
+
+            {/* 5. Focus Areas: Spans full width (3 cols on lg, 2 cols on md) */}
+            <div className="md:col-span-2 lg:col-span-3 p-5 sm:p-6 rounded-xl bg-surface border border-borderToken hover:border-primary/40 dark:bg-white/[0.03] dark:border-white/10 dark:hover:border-white/20 transition-colors duration-200 shadow-sm dark:shadow-none">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <span className="text-[11px] font-mono font-bold tracking-widest text-primary uppercase select-none shrink-0">
+                  PRIMARY FOCUS
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {siteConfig.focus.map((item, idx) => (
+                    <span 
+                      key={idx} 
+                      className="text-xs font-mono font-medium text-textSecondary bg-surfaceDark dark:bg-white/5 border border-borderToken dark:border-white/10 px-3 py-1.5 rounded-md"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
 
