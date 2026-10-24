@@ -1,6 +1,5 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, FileText, Check, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { siteConfig } from '../data/siteConfig';
 
@@ -115,17 +114,17 @@ export default function Projects() {
               onClick={goPrev}
               disabled={current === 0}
               aria-label="Previous project"
-              className="p-2 rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none text-sm font-medium select-none"
             >
-              <ChevronLeft size={16} />
+              ←
             </button>
             <button
               onClick={goNext}
               disabled={current === total - 1}
               aria-label="Next project"
-              className="p-2 rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-300 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none text-sm font-medium select-none"
             >
-              <ChevronRight size={16} />
+              →
             </button>
           </div>
         </motion.div>
@@ -165,7 +164,7 @@ export default function Projects() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6 w-full">
                     {project.features.map((feature, idx) => (
                       <div key={idx} className="flex items-center gap-2 text-textSecondary text-xs font-medium">
-                        <Check size={14} className="text-primary shrink-0" />
+                        <span className="text-primary font-mono select-none" aria-hidden="true">+</span>
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -188,41 +187,41 @@ export default function Projects() {
                     {project.links.caseStudy ? (
                       <Link
                         to={project.links.caseStudy}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-textPrimary text-background font-medium text-xs transition-colors hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-textPrimary text-background font-medium text-xs transition-colors hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary shadow-sm"
                       >
-                        <FileText size={14} /> Case Study
+                        Case Study →
                       </Link>
                     ) : (
                       <span
                         title="Case Study coming soon"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surfaceDark border border-borderToken text-textMuted dark:bg-white/[0.02] dark:border-white/5 dark:text-gray-500 font-medium text-xs cursor-not-allowed select-none"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surfaceDark border border-borderToken text-textMuted dark:bg-white/[0.02] dark:border-white/5 dark:text-gray-500 font-medium text-xs cursor-not-allowed select-none"
                       >
-                        <FileText size={14} /> Case Study
+                        Case Study →
                       </span>
                     )}
                     <a
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-borderToken text-textPrimary hover:bg-surfaceDark dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 font-medium text-xs transition-colors focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface border border-borderToken text-textPrimary hover:bg-surfaceDark dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 font-medium text-xs transition-colors focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
                     >
-                      GitHub Repo
+                      GitHub Repo ↗
                     </a>
                     {project.links.live ? (
                       <a
                         href={project.links.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surface border border-borderToken text-textPrimary hover:bg-surfaceDark dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 font-medium text-xs transition-colors focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface border border-borderToken text-textPrimary hover:bg-surfaceDark dark:bg-white/5 dark:border-white/10 dark:text-white dark:hover:bg-white/10 font-medium text-xs transition-colors focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
                       >
-                        <ExternalLink size={14} /> Live Demo
+                        Live Demo ↗
                       </a>
                     ) : (
                       <span
                         title={project.links.liveTooltip}
-                        className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-surfaceDark border border-borderToken text-textMuted dark:bg-white/[0.02] dark:border-white/5 dark:text-gray-500 font-medium text-xs cursor-not-allowed select-none"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surfaceDark border border-borderToken text-textMuted dark:bg-white/[0.02] dark:border-white/5 dark:text-gray-500 font-medium text-xs cursor-not-allowed select-none"
                       >
-                        <ExternalLink size={14} /> Live Demo
+                        Live Demo ↗
                       </span>
                     )}
                   </div>
