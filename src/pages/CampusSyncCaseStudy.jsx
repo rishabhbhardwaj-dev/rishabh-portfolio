@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, Database, Users, Shield, FileText, BarChart3, Calendar, BookOpen, Clock } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 import Background from '../components/Background';
 
@@ -18,14 +17,14 @@ export default function CampusSyncCaseStudy() {
   }, []);
 
   const modules = [
-    { icon: <Users size={20} />, name: "Student Management", desc: "Complete student lifecycle from admission to graduation tracking" },
-    { icon: <BookOpen size={20} />, name: "Course Management", desc: "Curriculum planning, course assignment, and academic structure" },
-    { icon: <Calendar size={20} />, name: "Attendance System", desc: "Real-time attendance tracking with automated reporting" },
-    { icon: <BarChart3 size={20} />, name: "Marks & Grading", desc: "Automated grade calculations with customizable grading schemas" },
-    { icon: <Clock size={20} />, name: "Timetable Engine", desc: "Intelligent timetable generation and conflict resolution" },
-    { icon: <Shield size={20} />, name: "Role-Based Access", desc: "Admin, Faculty, and Student dashboards with granular permissions" },
-    { icon: <FileText size={20} />, name: "Document Management", desc: "Secure upload, storage, and retrieval of academic documents" },
-    { icon: <Database size={20} />, name: "Faculty Management", desc: "Faculty profiles, department mapping, and workload allocation" },
+    { number: "01", name: "Student Management", desc: "Complete student lifecycle from admission to graduation tracking" },
+    { number: "02", name: "Course Management", desc: "Curriculum planning, course assignment, and academic structure" },
+    { number: "03", name: "Attendance System", desc: "Real-time attendance tracking with automated reporting" },
+    { number: "04", name: "Marks & Grading", desc: "Automated grade calculations with customizable grading schemas" },
+    { number: "05", name: "Timetable Engine", desc: "Intelligent timetable generation and conflict resolution" },
+    { number: "06", name: "Role-Based Access", desc: "Admin, Faculty, and Student dashboards with granular permissions" },
+    { number: "07", name: "Document Management", desc: "Secure upload, storage, and retrieval of academic documents" },
+    { number: "08", name: "Faculty Management", desc: "Faculty profiles, department mapping, and workload allocation" },
   ];
 
   const techStack = [
@@ -78,7 +77,7 @@ export default function CampusSyncCaseStudy() {
             to="/"
             className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-medium"
           >
-            <ArrowLeft size={16} /> Back to Portfolio
+            ← Back to Portfolio
           </Link>
           <a
             href={siteConfig.projects.campusSync.github}
@@ -167,15 +166,13 @@ export default function CampusSyncCaseStudy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="group flex items-start gap-4 p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300"
+                  className="group flex flex-col p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300"
                 >
-                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-primary group-hover:scale-110 transition-transform">
-                    {mod.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">{mod.name}</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">{mod.desc}</p>
-                  </div>
+                  <span className="text-xs font-mono font-bold text-primary tracking-wider mb-2 select-none">
+                    {mod.number} // MODULE
+                  </span>
+                  <h4 className="text-white font-semibold mb-1 text-base">{mod.name}</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">{mod.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -199,8 +196,8 @@ export default function CampusSyncCaseStudy() {
                   <div className="flex flex-col gap-2">
                     {stack.items.map((item, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm text-gray-300">
-                        <CheckCircle2 size={14} className="text-gray-600 flex-shrink-0" />
-                        {item}
+                        <span className="text-primary font-mono text-xs select-none" aria-hidden="true">•</span>
+                        <span>{item}</span>
                       </div>
                     ))}
                   </div>

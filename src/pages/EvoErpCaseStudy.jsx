@@ -1,27 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowLeft, 
-  CheckCircle2, 
-  Database, 
-  Users, 
-  Shield, 
-  FileText, 
-  BarChart3, 
-  Calendar, 
-  BookOpen, 
-  Clock, 
-  Lock, 
-  AlertTriangle, 
-  Layers, 
-  CreditCard, 
-  Bell, 
-  FileSpreadsheet, 
-  Code2,
-  ExternalLink,
-  Check
-} from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 import Background from '../components/Background';
 
@@ -45,18 +24,18 @@ export default function EvoErpCaseStudy() {
   ];
 
   const features = [
-    { icon: <Shield size={20} />, name: "Auth & Tenant Isolation", desc: "Credentials auth via NextAuth v5, session JWT context, and server-derived tenant context for tenant-scoped record isolation." },
-    { icon: <Users size={20} />, name: "Role-Based Access Control", desc: "Granular server-side RBAC for ADMIN, TEACHER, STUDENT, and PARENT with role-aware dashboard access." },
-    { icon: <BookOpen size={20} />, name: "Academic Structure", desc: "School-scoped class and section management, subject catalogs with code normalization and deletion guards." },
-    { icon: <Users size={20} />, name: "Student Directory", desc: "Admissions, enrollment, section transfers, parent linkage, status tracking, and strict deletion protection." },
-    { icon: <Code2 size={20} />, name: "Teacher Onboarding", desc: "Staff directory, employee codes, department records, and atomic user + teacher creation transactions." },
-    { icon: <Calendar size={20} />, name: "Attendance Register", desc: "Daily register tracking (PRESENT, ABSENT, LATE, HALF_DAY, EXCUSED) with a strict 48-hour teacher edit window." },
-    { icon: <BarChart3 size={20} />, name: "CBSE Exams & Grading", desc: "Exam setup, server-validated marks entry, automatic 8-tier CBSE grading (A1 to E), and grade access." },
-    { icon: <FileText size={20} />, name: "A4 Report Cards", desc: "Single & multi-term report card generation, term aggregation, teacher remarks, co-scholastic grading, and batch printing." },
-    { icon: <CreditCard size={20} />, name: "Finance Configuration", desc: "Stage 1 fee categories, structure items, RTE waivers, sibling concessions, and snapshot-style allocation rules." },
-    { icon: <Bell size={20} />, name: "Audience Notices", desc: "Draft/publish/archive notice lifecycle targeted by role (ALL, STUDENTS, PARENTS, TEACHERS) with 48h NEW tags." },
-    { icon: <FileSpreadsheet size={20} />, name: "Institutional Reports", desc: "Enrollment stats, attendance analytics, shortage-risk reports (<75% CBSE threshold), and CSV exports." },
-    { icon: <Database size={20} />, name: "Audit Logging & Safety", desc: "Backend database audit logs via AuditLog table, Zod payload validation, and atomic Prisma transactions." },
+    { number: "01", name: "Auth & Tenant Isolation", desc: "Credentials auth via NextAuth v5, session JWT context, and server-derived tenant context for tenant-scoped record isolation." },
+    { number: "02", name: "Role-Based Access Control", desc: "Granular server-side RBAC for ADMIN, TEACHER, STUDENT, and PARENT with role-aware dashboard access." },
+    { number: "03", name: "Academic Structure", desc: "School-scoped class and section management, subject catalogs with code normalization and deletion guards." },
+    { number: "04", name: "Student Directory", desc: "Admissions, enrollment, section transfers, parent linkage, status tracking, and strict deletion protection." },
+    { number: "05", name: "Teacher Onboarding", desc: "Staff directory, employee codes, department records, and atomic user + teacher creation transactions." },
+    { number: "06", name: "Attendance Register", desc: "Daily register tracking (PRESENT, ABSENT, LATE, HALF_DAY, EXCUSED) with a strict 48-hour teacher edit window." },
+    { number: "07", name: "CBSE Exams & Grading", desc: "Exam setup, server-validated marks entry, automatic 8-tier CBSE grading (A1 to E), and grade access." },
+    { number: "08", name: "A4 Report Cards", desc: "Single & multi-term report card generation, term aggregation, teacher remarks, co-scholastic grading, and batch printing." },
+    { number: "09", name: "Finance Configuration", desc: "Stage 1 fee categories, structure items, RTE waivers, sibling concessions, and snapshot-style allocation rules." },
+    { number: "10", name: "Audience Notices", desc: "Draft/publish/archive notice lifecycle targeted by role (ALL, STUDENTS, PARENTS, TEACHERS) with 48h NEW tags." },
+    { number: "11", name: "Institutional Reports", desc: "Enrollment stats, attendance analytics, shortage-risk reports (<75% CBSE threshold), and CSV exports." },
+    { number: "12", name: "Audit Logging & Safety", desc: "Backend database audit logs via AuditLog table, Zod payload validation, and atomic Prisma transactions." },
   ];
 
   const techStack = [
@@ -108,7 +87,7 @@ export default function EvoErpCaseStudy() {
             to="/"
             className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-medium"
           >
-            <ArrowLeft size={16} /> Back to Portfolio
+            ← Back to Portfolio
           </Link>
           <a
             href={siteConfig.projects.evoErp.github}
@@ -166,16 +145,14 @@ export default function EvoErpCaseStudy() {
             <h2 className="text-xs font-mono font-bold tracking-widest text-[#5B7FA6] uppercase mb-4">02 // PROJECT STATUS</h2>
             <h3 className="text-2xl font-bold text-white mb-6">Current Implementation & Verification</h3>
             <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="p-2.5 rounded-xl bg-[#5B7FA6]/10 text-[#5B7FA6] shrink-0 mt-1">
-                  <CheckCircle2 size={22} />
+              <div className="flex flex-col">
+                <div className="text-[11px] font-mono text-[#5B7FA6] font-bold tracking-widest uppercase mb-1.5 select-none">
+                  STATUS // VERIFIED CORE
                 </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-2">Delivery Milestone Reached</h4>
-                  <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                    Core delivery scope is implemented and locally verified. The completed feature branch has been merged into main. A hosted production cloud deployment is not currently established.
-                  </p>
-                </div>
+                <h4 className="text-lg font-semibold text-white mb-2">Delivery Milestone Reached</h4>
+                <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                  Core delivery scope is implemented and locally verified. The completed feature branch has been merged into main. A hosted production cloud deployment is not currently established.
+                </p>
               </div>
 
               <div className="border-t border-white/10 pt-6">
@@ -272,9 +249,9 @@ export default function EvoErpCaseStudy() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {features.map((item, idx) => (
                 <div key={idx} className="p-6 rounded-2xl bg-white/[0.02] border border-white/10 flex flex-col items-start">
-                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-[#5B7FA6] mb-4">
-                    {item.icon}
-                  </div>
+                  <span className="text-xs font-mono font-bold text-[#5B7FA6] tracking-wider mb-2 select-none">
+                    {item.number} // WORKFLOW
+                  </span>
                   <h4 className="text-lg font-bold text-white mb-2">{item.name}</h4>
                   <p className="text-sm text-gray-300 leading-relaxed">{item.desc}</p>
                 </div>
@@ -286,7 +263,23 @@ export default function EvoErpCaseStudy() {
           <motion.section {...fadeUp} className="mb-20">
             <div className="p-8 rounded-2xl bg-amber-500/5 border border-amber-500/20 text-gray-300 leading-relaxed">
               <div className="flex items-center gap-2 text-amber-400 font-semibold mb-3">
-                <AlertTriangle size={18} />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  className="shrink-0"
+                >
+                  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z" />
+                  <line x1="12" y1="9" x2="12" y2="13" />
+                  <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
                 <span>Finance Module Boundary Clarification</span>
               </div>
               <p className="text-sm text-gray-300">
@@ -302,21 +295,18 @@ export default function EvoErpCaseStudy() {
             <div className="p-8 rounded-2xl bg-white/[0.02] border border-white/10 space-y-6 text-gray-300 leading-relaxed">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="p-5 rounded-xl bg-white/5 border border-white/10">
-                  <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                    <Shield size={16} className="text-[#5B7FA6]" /> Zod Validation
-                  </h4>
+                  <div className="text-[11px] font-mono text-[#5B7FA6] font-bold tracking-wider mb-1 select-none">01 // INTEGRITY</div>
+                  <h4 className="text-white font-semibold mb-2">Zod Validation</h4>
                   <p className="text-xs text-gray-400">Strict runtime schema validation on all Server Action input payloads before database execution.</p>
                 </div>
                 <div className="p-5 rounded-xl bg-white/5 border border-white/10">
-                  <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                    <Database size={16} className="text-[#5B7FA6]" /> Prisma Transactions
-                  </h4>
+                  <div className="text-[11px] font-mono text-[#5B7FA6] font-bold tracking-wider mb-1 select-none">02 // ATOMICITY</div>
+                  <h4 className="text-white font-semibold mb-2">Prisma Transactions</h4>
                   <p className="text-xs text-gray-400">Atomic <code className="text-[#5B7FA6]">$transaction</code> blocks for teacher onboarding, fee allocations, and marks entry.</p>
                 </div>
                 <div className="p-5 rounded-xl bg-white/5 border border-white/10">
-                  <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
-                    <FileText size={16} className="text-[#5B7FA6]" /> Database Audit Logs
-                  </h4>
+                  <div className="text-[11px] font-mono text-[#5B7FA6] font-bold tracking-wider mb-1 select-none">03 // TRACEABILITY</div>
+                  <h4 className="text-white font-semibold mb-2">Database Audit Logs</h4>
                   <p className="text-xs text-gray-400">Centralized backend audit utility writing key mutation events to the database <code className="text-[#5B7FA6]">AuditLog</code> table.</p>
                 </div>
               </div>
@@ -365,7 +355,7 @@ export default function EvoErpCaseStudy() {
                   "Main branch promotion & docs",
                 ].map((task, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-gray-300">
-                    <Check size={14} className="text-[#5B7FA6] shrink-0" />
+                    <span className="text-[#5B7FA6] font-mono text-xs select-none" aria-hidden="true">+</span>
                     <span>{task}</span>
                   </div>
                 ))}
@@ -438,7 +428,7 @@ export default function EvoErpCaseStudy() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-semibold text-sm hover:bg-gray-200 transition-colors"
               >
-                <Code2 size={18} /> View GitHub Repository
+                View GitHub Repository ↗
               </a>
             </div>
           </motion.section>

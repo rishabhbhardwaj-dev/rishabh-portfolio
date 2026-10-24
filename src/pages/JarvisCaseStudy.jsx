@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, CheckCircle2, Brain, Mic, MessageSquare, Zap, Workflow, Plug, Settings, Volume2 } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 import Background from '../components/Background';
 
@@ -18,14 +17,14 @@ export default function JarvisCaseStudy() {
   }, []);
 
   const features = [
-    { icon: <Mic size={20} />, name: "Voice Recognition", desc: "Natural speech input with real-time audio processing and transcription" },
-    { icon: <Brain size={20} />, name: "Contextual Memory", desc: "Maintains conversation context for multi-turn reasoning and follow-ups" },
-    { icon: <MessageSquare size={20} />, name: "Natural Language Processing", desc: "Understands intent, extracts entities, and generates human-like responses" },
-    { icon: <Workflow size={20} />, name: "Workflow Automation", desc: "Automates repetitive tasks like file operations, searches, and scheduling" },
-    { icon: <Plug size={20} />, name: "API Integrations", desc: "Connects to external services for weather, news, calculations, and more" },
-    { icon: <Volume2 size={20} />, name: "Text-to-Speech", desc: "Responds with natural-sounding voice output for a conversational experience" },
-    { icon: <Settings size={20} />, name: "Extensible Architecture", desc: "Plugin-based design allows adding new capabilities without modifying core logic" },
-    { icon: <Zap size={20} />, name: "Low Latency Responses", desc: "Optimized prompt engineering and caching for near-instant AI interactions" },
+    { number: "01", name: "Voice Recognition", desc: "Natural speech input with real-time audio processing and transcription" },
+    { number: "02", name: "Contextual Memory", desc: "Maintains conversation context for multi-turn reasoning and follow-ups" },
+    { number: "03", name: "Natural Language Processing", desc: "Understands intent, extracts entities, and generates human-like responses" },
+    { number: "04", name: "Workflow Automation", desc: "Automates repetitive tasks like file operations, searches, and scheduling" },
+    { number: "05", name: "API Integrations", desc: "Connects to external services for weather, news, calculations, and more" },
+    { number: "06", name: "Text-to-Speech", desc: "Responds with natural-sounding voice output for a conversational experience" },
+    { number: "07", name: "Extensible Architecture", desc: "Plugin-based design allows adding new capabilities without modifying core logic" },
+    { number: "08", name: "Low Latency Responses", desc: "Optimized prompt engineering and caching for near-instant AI interactions" },
   ];
 
   const techStack = [
@@ -78,7 +77,7 @@ export default function JarvisCaseStudy() {
             to="/"
             className="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm font-medium"
           >
-            <ArrowLeft size={16} /> Back to Portfolio
+            ← Back to Portfolio
           </Link>
           <a
             href={siteConfig.projects.jarvisAI.github}
@@ -147,6 +146,7 @@ export default function JarvisCaseStudy() {
           </motion.div>
 
           {/* Features Grid */}
+          {/* Core Capabilities */}
           <motion.div {...fadeUp} className="mb-24">
             <h2 className="text-sm font-bold tracking-widest text-accent1 uppercase mb-4">Core Capabilities</h2>
             <h3 className="text-3xl md:text-4xl font-bold text-white mb-10">Intelligence meets automation.</h3>
@@ -158,15 +158,13 @@ export default function JarvisCaseStudy() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="group flex items-start gap-4 p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300"
+                  className="group flex flex-col p-6 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/10 transition-all duration-300"
                 >
-                  <div className="p-3 rounded-xl bg-white/5 border border-white/10 text-accent1 group-hover:scale-110 transition-transform">
-                    {feature.icon}
-                  </div>
-                  <div>
-                    <h4 className="text-white font-semibold mb-1">{feature.name}</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
-                  </div>
+                  <span className="text-xs font-mono font-bold text-accent1 tracking-wider mb-2 select-none">
+                    {feature.number} // CAPABILITY
+                  </span>
+                  <h4 className="text-white font-semibold mb-1 text-base">{feature.name}</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">{feature.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -216,8 +214,8 @@ export default function JarvisCaseStudy() {
                   <div className="flex flex-col gap-2">
                     {stack.items.map((item, i) => (
                       <div key={i} className="flex items-center gap-2 text-sm text-gray-300">
-                        <CheckCircle2 size={14} className="text-gray-600 flex-shrink-0" />
-                        {item}
+                        <span className="text-accent1 font-mono text-xs select-none" aria-hidden="true">•</span>
+                        <span>{item}</span>
                       </div>
                     ))}
                   </div>

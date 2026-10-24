@@ -1,38 +1,37 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Briefcase, GraduationCap, Code, Rocket, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const journeyData = [
   {
     year: "July 2026 — Present",
     navYear: "2026",
+    phase: "PHASE 05",
     title: "Software Development Intern — Full Stack & AI/ML",
     description: "EvolveSpark Services and Solutions (OPC) Pvt. Ltd.",
-    icon: <Briefcase size={20} className="text-primary" />,
   },
   {
     year: "2025",
+    phase: "PHASE 04",
     title: "Built JARVIS AI Assistant",
     description: "Developed an intelligent assistant with context-aware responses, NLP, and task automation workflows.",
-    icon: <Rocket size={20} className="text-primary" />,
   },
   {
     year: "2024",
+    phase: "PHASE 03",
     title: "Developed CampusSync ERP",
     description: "Architected a full-stack university management system with role-based access and 8 operational modules.",
-    icon: <Code size={20} className="text-primary" />,
   },
   {
     year: "2023",
+    phase: "PHASE 02",
     title: "Full Stack Engineering Foundations",
     description: "Mastered React, Node.js, Express, relational databases, and RESTful web service architecture.",
-    icon: <Briefcase size={20} className="text-primary" />,
   },
   {
     year: "2022",
+    phase: "PHASE 01",
     title: "Started B.Tech in Computer Science",
     description: "Began formal education at SCRIET, CCSU Meerut and began building software systems.",
-    icon: <GraduationCap size={20} className="text-primary" />,
   }
 ];
 
@@ -115,9 +114,9 @@ export default function Journey() {
             onClick={goPrev}
             disabled={current === 0}
             aria-label="Previous milestone"
-            className="p-2 rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none text-sm font-medium select-none"
           >
-            <ChevronLeft size={16} />
+            ←
           </button>
 
           <span className="text-xs font-mono text-textMuted">
@@ -128,9 +127,9 @@ export default function Journey() {
             onClick={goNext}
             disabled={current === total - 1}
             aria-label="Next milestone"
-            className="p-2 rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none"
+            className="w-8 h-8 flex items-center justify-center rounded-full border border-borderToken bg-surface text-textSecondary hover:text-textPrimary hover:bg-surfaceDark dark:border-white/10 dark:bg-white/[0.03] dark:text-gray-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors disabled:opacity-20 disabled:cursor-not-allowed focus-visible:ring-2 focus-visible:ring-primary shadow-sm dark:shadow-none text-sm font-medium select-none"
           >
-            <ChevronRight size={16} />
+            →
           </button>
         </div>
 
@@ -154,15 +153,15 @@ export default function Journey() {
             >
               <div className="flex flex-col items-center text-center px-2">
 
-                {/* Milestone Icon */}
-                <div className="w-12 h-12 rounded-xl bg-surfaceDark border border-borderToken dark:bg-white/5 dark:border-white/10 flex items-center justify-center mb-4">
-                  {item.icon}
+                {/* Milestone Phase & Year */}
+                <div className="inline-flex items-center gap-2 mb-3">
+                  <span className="text-[11px] font-mono text-primary font-bold tracking-widest uppercase px-2.5 py-1 rounded bg-surfaceDark border border-borderToken dark:bg-white/5 dark:border-white/10">
+                    {item.phase}
+                  </span>
+                  <span className="text-xs font-mono text-textMuted tracking-wider font-medium">
+                    {item.year}
+                  </span>
                 </div>
-
-                {/* Milestone Year */}
-                <span className="text-xs font-mono text-primary uppercase tracking-widest font-semibold mb-2">
-                  {item.year}
-                </span>
 
                 {/* Title */}
                 <h3 className="text-xl font-bold text-textPrimary mb-3 max-w-md">

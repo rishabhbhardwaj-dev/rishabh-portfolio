@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import { siteConfig } from '../data/siteConfig';
 import Background from '../components/Background';
 
@@ -17,7 +16,7 @@ export default function Privacy() {
           to="/"
           className="inline-flex items-center gap-2 text-xs font-medium text-gray-400 hover:text-white transition-colors mb-10 focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
         >
-          <ArrowLeft size={16} /> Back to Portfolio
+          ← Back to Portfolio
         </Link>
 
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">Privacy Policy</h1>
